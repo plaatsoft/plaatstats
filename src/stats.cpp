@@ -20,23 +20,25 @@
  *
  *  Release Notes
  *
- *  21-03-2010 Version 0.5 (Next coming release)
- *  - Improve number formatting (Add . after 3 digits)
- *  - Build PlaatStats with QtCreator compiler v1.3.81
+ *  21-03-2010 Version 0.5
+ *  - Improve number formatting (Add . after 3 digits).
+ *  - Add Windows setup file.
+ *  - Add source code to Google Code
+ *  - Build PlaatStats with QtCreator v1.3.81. 
  *
  *  18-03-2010 Version 0.4
  *  - Change GUI layout.
  *  - Added Drupal downloads.
  *  - Added application icon.
  *  - Refactor file names.
- *  - Build PlaatStats with QtCreator compiler v1.3.1
+ *  - Build with QtCreator v1.3.1
  *
  *  17-03-2010 Version 0.3
  *  - First release for Homebrew Scene.
  *  - Cleanup code.
  *  - If internet is down show 0 values in boxes.
  *  - Move clipboard functionality to Menu action.
- *  - Build PlaatStats with QtCreator compiler v1.3.1
+ *  - Build with QtCreator v1.3.1
  *
  *  16-03-2010 Version 0.2
  *  - Added fix window size.
@@ -45,14 +47,14 @@
  *  - Fetch data from Google Code sites.
  *  - When application is started, information is directly fetched.
  *  - Add windows clipboard support (HTML output is added)
- *  - Build PlaatStats with QtCreator compiler v1.3.1
+ *  - Build with QtCreator v1.3.1
  *
  *  14-03-2010 Version 0.1
  *  - Start building.
  *  - Created GUI.
  *  - Added network call (Plaatsoft and CodeMii website)
  *  - Added stateMachine.
- *  - Build PlaatStats with QtCreator compiler v1.3.1
+ *  - Build with QtCreator v1.3.1
  */
 
 #include "stats.h"

@@ -26,4 +26,5 @@ Source: "src\release\license.txt"; DestDir: "{app}"; Flags: isreadme
 
 [Icons]
 Name: "{group}\PlaatStats\PlaatStats"; Filename: "{app}\stats.exe"
+Name: "{commondesktop}\PlaatSoft Statistics"; Filename: "{app}\stats.exe"
 Name: "{group}\PlaatStats\Uninstaller"; Filename: "{uninstallexe}"

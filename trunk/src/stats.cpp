@@ -21,7 +21,7 @@
  *  Release Notes
  *
  *  21-03-2010 Version 0.5
- *  - Improve number formatting (Add . after 3 digits).
+ *  - Improve number formatting (Added dot after 3 digits).
  *  - Add Windows setup file.
  *  - Add source code to Google Code
  *  - Build PlaatStats with QtCreator v1.3.81. 

@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'stats.ui'
 **
-** Created: Sun 21. Mar 14:32:16 2010
+** Created: Fri 26. Mar 21:55:32 2010
 **      by: Qt User Interface Compiler version 4.6.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!

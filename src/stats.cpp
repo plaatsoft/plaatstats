@@ -268,9 +268,6 @@ void MainWindow::fetch()
     // Disable button during request.
     ui->actionRefreshData->setEnabled(false);
 
-    // Show datestamp when latest fetch ocure!
-    //ui->timeStampLabel->setText(getDate());
-
     // Start startmachine
     sm=0;
     stateMachine();
@@ -802,28 +799,6 @@ QString MainWindow::formatNumber(QString number)
     }
 }
 
-/**
- * Create trace timestamp
- *
- * @return timestamp in dutch format
- */
-const char * MainWindow::getDate()
-{
-  struct tm *now = NULL;
-  time_t time_value = 0;
-  static char buf[ 50 ] ;
-
-  /* Get time value */
-  time_value = time(NULL);
-
-  /* Get time and date structure */
-  now = localtime(&time_value);
-
-  // Create time stamp
-  sprintf(buf,"Last update: %02d-%02d-%04d %02d:%02d:%02d",
-        now->tm_mday, now->tm_mon+1, now->tm_year+1900,
-        now->tm_hour,now->tm_min,now->tm_sec);
-
-  return buf;
-}
-
+// ---------------------------------------------------
+// The End
+// ---------------------------------------------------

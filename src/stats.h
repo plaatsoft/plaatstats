@@ -76,7 +76,7 @@ private:
 
 /**
  * @mainpage PlaatStats Documentation
- * @image html PlaatStats.png
+ * @image html PlaatStats.jpg
  * Welcome to the PlaatStats documentation.
  *
  * @section Introduction

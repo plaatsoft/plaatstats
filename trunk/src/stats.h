@@ -73,3 +73,64 @@ private:
 };
 
 #endif // STATS_H
+
+/**
+ * @mainpage PlaatStats Documentation
+ * @image html PlaatStats.png
+ * Welcome to the PlaatStats documentation.
+ *
+ * @section Introduction
+ * PlaatStats is Windows Statistics tool
+ *
+ * @section Links
+ * Website: http://www.plaatsoft.nl\n
+ * Code: http://code.google.com/p/plaatstats\n
+ *
+ * @section Credits
+ * Documentation: wplaat\n
+ *
+ * @section WishList
+ * - Http proxy support
+ *
+ * @section ReleaseNotes
+ *  <b>26-03-2009 Version 0.6 (Next Development release)</b>
+ *  - Rename registry key name.
+ *  - Improve source code documentation.
+ *  - Build PlaatStats with QtCreator v1.3.1.
+ *
+ *  <b>21-03-2010 Version 0.5</b>
+ *  - Improve number formatting (Add . after 3 digits).
+ *  - Add Windows setup file.
+ *  - Add source code to Google Code
+ *  - Build PlaatStats with QtCreator v1.3.81.
+ *
+ *  <b>18-03-2010 Version 0.4</b>
+ *  - Change GUI layout.
+ *  - Added Drupal downloads.
+ *  - Added application icon.
+ *  - Refactor file names.
+ *  - Build with QtCreator v1.3.1
+ *
+ *  <b>17-03-2010 Version 0.3</b>
+ *  - First release for Homebrew Scene.
+ *  - Cleanup code.
+ *  - If internet is down show 0 values in boxes.
+ *  - Move clipboard functionality to Menu action.
+ *  - Build with QtCreator v1.3.1
+ *
+ *  <b>16-03-2010 Version 0.2</b>
+ *  - Added fix window size.
+ *  - Store window position in Windows registry.
+ *  - Improve GUI layout.
+ *  - Fetch data from Google Code sites.
+ *  - When application is started, information is directly fetched.
+ *  - Add windows clipboard support (HTML output is added)
+ *  - Build with QtCreator v1.3.1
+ *
+ *  <b>14-03-2010 Version 0.1</b>
+ *  - Start building.
+ *  - Created GUI.
+ *  - Added network call (Plaatsoft and CodeMii website)
+ *  - Added stateMachine.
+ *  - Build with QtCreator v1.3.1
+ */

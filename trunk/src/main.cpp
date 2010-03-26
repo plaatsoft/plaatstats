@@ -22,6 +22,9 @@
 #include <QtGui/QApplication>
 #include "stats.h"
 
+/**
+ * Main
+ */
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);

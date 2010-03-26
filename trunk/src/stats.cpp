@@ -17,44 +17,6 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
- *
- *  Release Notes
- *
- *  21-03-2010 Version 0.5
- *  - Improve number formatting (Added dot after 3 digits).
- *  - Add Windows setup file.
- *  - Add source code to Google Code
- *  - Build PlaatStats with QtCreator v1.3.81. 
- *
- *  18-03-2010 Version 0.4
- *  - Change GUI layout.
- *  - Added Drupal downloads.
- *  - Added application icon.
- *  - Refactor file names.
- *  - Build with QtCreator v1.3.1
- *
- *  17-03-2010 Version 0.3
- *  - First release for Homebrew Scene.
- *  - Cleanup code.
- *  - If internet is down show 0 values in boxes.
- *  - Move clipboard functionality to Menu action.
- *  - Build with QtCreator v1.3.1
- *
- *  16-03-2010 Version 0.2
- *  - Added fix window size.
- *  - Store window position in Windows registry.
- *  - Improve GUI layout.
- *  - Fetch data from Google Code sites.
- *  - When application is started, information is directly fetched.
- *  - Add windows clipboard support (HTML output is added)
- *  - Build with QtCreator v1.3.1
- *
- *  14-03-2010 Version 0.1
- *  - Start building.
- *  - Created GUI.
- *  - Added network call (Plaatsoft and CodeMii website)
- *  - Added stateMachine.
- *  - Build with QtCreator v1.3.1
  */
 
 #include "stats.h"
@@ -64,6 +26,9 @@
 #include <QtGui>
 #include <QtNetwork>
 
+/**
+ * Constructor
+ */
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
@@ -79,17 +44,23 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     setMinimumSize(370,428);
     setMaximumSize(370,428);
 
-    setWindowTitle("PlaatSoft Downloads Statistics v0.5");
+    setWindowTitle("PlaatSoft Downloads Statistics v0.6");
 
     // Fetch direct data from internet.
     fetch();
 }
 
+/**
+ * Destructor
+ */
 MainWindow::~MainWindow()
 {
     delete ui;
 }
 
+/**
+ * Change Event
+ */
 void MainWindow::changeEvent(QEvent *e)
 {
     QMainWindow::changeEvent(e);
@@ -102,6 +73,9 @@ void MainWindow::changeEvent(QEvent *e)
     }
 }
 
+/**
+ * Create Actions
+ */
 void MainWindow::createActions()
 {
     // Menu actions
@@ -112,11 +86,14 @@ void MainWindow::createActions()
     connect(ui->actionExit, SIGNAL(triggered()), this, SLOT(close()));
 }
 
+/**
+ * About
+ */
 void MainWindow::about()
 {
     QMessageBox::about(this, tr("About"),
        tr("<b>PlaatSoft Downloads Statistics</b><br>"
-          "Version 0.5 (Build 21-03-2010)<br>"
+          "Version 0.6 (Build 26-03-2010)<br>"
           "<br>"
           "Created by <i>wplaat</i><br>"
           "<br>"
@@ -126,6 +103,9 @@ void MainWindow::about()
           "<a href='http://www.plaatsoft.nl'>PlaatSoft</a> 2008-2010"));
 }
 
+/**
+ * Fill Clipboard
+ */
 void MainWindow::fillClipboard()
 {
     qDebug() << "fillClipboard:enter ";
@@ -243,6 +223,10 @@ void MainWindow::fillClipboard()
     clipboard->setText(text);
 }
 
+/**
+ * fetch
+ * Network Request
+ */
 void MainWindow::fetch()
 {
     // Clear data
@@ -292,6 +276,9 @@ void MainWindow::fetch()
     stateMachine();
 }
 
+/**
+ * StateMachine
+ */
 void MainWindow::stateMachine()
 {
     QString address;
@@ -622,6 +609,9 @@ void MainWindow::stateMachine()
     }
 }
 
+/**
+ * Calculate
+ */
 void MainWindow::calculate()
 {
     calculateApplTotals();
@@ -632,6 +622,9 @@ void MainWindow::calculate()
     calculateWiiTotals();
 }
 
+/**
+ * Calculate Application totals
+ */
 void MainWindow::calculateApplTotals()
 {
    int a = convert(ui->pong2Edit->text());
@@ -660,6 +653,9 @@ void MainWindow::calculateApplTotals()
    ui->towerDefenseEdit4->setText(formatNumber(a+b+c));
 }
 
+/**
+ * Calculate My Website totals
+ */
 void MainWindow::calculateWebsite()
 {
    int a = convert(ui->pong2Edit->text());
@@ -670,6 +666,9 @@ void MainWindow::calculateWebsite()
    ui->totals->setText(formatNumber(a+b+c+d+e));
 }
 
+/**
+ * Calculate CodeMii totals
+ */
 void MainWindow::calculateHomebrewBrowser()
 {
    int a = convert(ui->pong2Edit2->text());
@@ -680,6 +679,9 @@ void MainWindow::calculateHomebrewBrowser()
    ui->totals2->setText(formatNumber(a+b+c+d+e));
 }
 
+/**
+ * Calculate Google Code totals
+ */
 void MainWindow::calculateGoogleCode()
 {
    int a = convert(ui->pong2Edit3->text());
@@ -689,6 +691,10 @@ void MainWindow::calculateGoogleCode()
    int e = convert(ui->towerDefenseEdit3->text());
    ui->totals3->setText(formatNumber(a+b+c+d+e));
 }
+
+/**
+ * Calculate Wii totals
+ */
 
 void MainWindow::calculateWiiTotals()
 {
@@ -700,6 +706,9 @@ void MainWindow::calculateWiiTotals()
    ui->totals4->setText(formatNumber(a+b+c+d+e));
 }
 
+/**
+ * Calculate Drupals totals
+ */
 void MainWindow::calculateDrupalTotals()
 {
    int a = convert(ui->addressbookEdit1->text());
@@ -708,6 +717,9 @@ void MainWindow::calculateDrupalTotals()
    ui->totalsDrupalEdit1->setText(formatNumber(a+b+c));
 }
 
+/**
+ * Process request HTTP response.
+ */
 void MainWindow::replyFinished(QNetworkReply *reply)
 {
     QString sA = QString::number( reply->bytesAvailable());
@@ -719,27 +731,39 @@ void MainWindow::replyFinished(QNetworkReply *reply)
     stateMachine();
 }
 
+/**
+ * Close Window
+ */
 void MainWindow::closeEvent(QCloseEvent *event)
 {
    // Store current window position
    writeSettings();
 }
 
+/**
+ * Read settings out Windows registry
+ */
 void MainWindow::readSettings()
 {
     // Fetch previous window position
-    QSettings settings("PlaatSoft", "Statistics");
+    QSettings settings("PlaatSoft", "PlaatStats");
     QPoint pos = settings.value("pos", QPoint(200, 200)).toPoint();
     move(pos);
 }
 
+/**
+ * Write settings to Windows registry
+ */
 void MainWindow::writeSettings()
 {
     // Store current window position
-    QSettings settings("PlaatSoft", "Statistics");
+    QSettings settings("PlaatSoft", "PlaatStats");
     settings.setValue("pos", pos());
 }
 
+/**
+ * Convert String to number
+ */
 int MainWindow::convert(QString number)
 {
    bool ok;
@@ -748,6 +772,9 @@ int MainWindow::convert(QString number)
    return number.replace(".","").toInt(&ok, 10);
 }
 
+/**
+ * Format number
+ */
 QString MainWindow::formatNumber(int number)
 {
     QString tmp = QString::number(number);
@@ -761,6 +788,9 @@ QString MainWindow::formatNumber(int number)
     }
 }
 
+/**
+ * Format number
+ */
 QString MainWindow::formatNumber(QString number)
 {
     // Insert . character after 3 digits
@@ -796,3 +826,4 @@ const char * MainWindow::getDate()
 
   return buf;
 }
+

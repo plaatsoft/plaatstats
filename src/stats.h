@@ -93,32 +93,32 @@ private:
  * - Http proxy support
  *
  * @section ReleaseNotes
- *  <b>26-03-2009 Version 0.6 (Next Development release)</b>
+ *  <b>27-03-2009 Version 0.60 (Next Development release)</b>
  *  - Rename registry key name.
  *  - Improve source code documentation.
  *  - Build PlaatStats with QtCreator v1.3.1.
  *
- *  <b>21-03-2010 Version 0.5</b>
+ *  <b>21-03-2010 Version 0.50</b>
  *  - Improve number formatting (Add . after 3 digits).
  *  - Add Windows setup file.
  *  - Add source code to Google Code
  *  - Build PlaatStats with QtCreator v1.3.81.
  *
- *  <b>18-03-2010 Version 0.4</b>
+ *  <b>18-03-2010 Version 0.40</b>
  *  - Change GUI layout.
  *  - Added Drupal downloads.
  *  - Added application icon.
  *  - Refactor file names.
  *  - Build with QtCreator v1.3.1
  *
- *  <b>17-03-2010 Version 0.3</b>
+ *  <b>17-03-2010 Version 0.30</b>
  *  - First release for Homebrew Scene.
  *  - Cleanup code.
  *  - If internet is down show 0 values in boxes.
  *  - Move clipboard functionality to Menu action.
  *  - Build with QtCreator v1.3.1
  *
- *  <b>16-03-2010 Version 0.2</b>
+ *  <b>16-03-2010 Version 0.20</b>
  *  - Added fix window size.
  *  - Store window position in Windows registry.
  *  - Improve GUI layout.
@@ -127,7 +127,7 @@ private:
  *  - Add windows clipboard support (HTML output is added)
  *  - Build with QtCreator v1.3.1
  *
- *  <b>14-03-2010 Version 0.1</b>
+ *  <b>14-03-2010 Version 0.10</b>
  *  - Start building.
  *  - Created GUI.
  *  - Added network call (Plaatsoft and CodeMii website)

@@ -44,7 +44,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     setMinimumSize(370,428);
     setMaximumSize(370,428);
 
-    setWindowTitle("PlaatSoft Downloads Statistics v0.6");
+    setWindowTitle("PlaatSoft Downloads Statistics v0.60");
 
     // Fetch direct data from internet.
     fetch();
@@ -93,7 +93,7 @@ void MainWindow::about()
 {
     QMessageBox::about(this, tr("About"),
        tr("<b>PlaatSoft Downloads Statistics</b><br>"
-          "Version 0.6 (Build 26-03-2010)<br>"
+          "Version 0.60 (Build 27-03-2010)<br>"
           "<br>"
           "Created by <i>wplaat</i><br>"
           "<br>"

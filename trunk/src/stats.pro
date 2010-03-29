@@ -5,8 +5,14 @@ QT += network
 TARGET = Statistics
 TEMPLATE = app
 SOURCES += main.cpp \
-    stats.cpp
-HEADERS += stats.h
-FORMS += stats.ui
-RESOURCES += 
+    stats.cpp \
+    settings.cpp \
+    about.cpp
+HEADERS += stats.h \
+    settings.h \
+    about.h
+FORMS += stats.ui \
+    settings.ui \
+    about.ui
+RESOURCES += resource.qrc
 RC_FILE = stats.rc

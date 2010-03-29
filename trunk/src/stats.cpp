@@ -19,12 +19,19 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
+#include <QtGui>
+#include <QtNetwork>
+
 #include "stats.h"
+#include "about.h"
+#include "settings.h"
 #include "time.h"
 #include "ui_stats.h"
 
-#include <QtGui>
-#include <QtNetwork>
+
+// ---------------------------------------------------
+// Constructor & Destructor
+// ---------------------------------------------------
 
 /**
  * Constructor
@@ -44,10 +51,10 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     setMinimumSize(370,428);
     setMaximumSize(370,428);
 
-    setWindowTitle("PlaatSoft Downloads Statistics v0.60");
+    setWindowTitle(tr("PlaatSoft Statistics " VERSION));
 
     // Fetch direct data from internet.
-    fetch();
+    fetchData();
 }
 
 /**
@@ -57,6 +64,10 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+// ---------------------------------------------------
+// Other methods
+// ---------------------------------------------------
 
 /**
  * Change Event
@@ -79,28 +90,10 @@ void MainWindow::changeEvent(QEvent *e)
 void MainWindow::createActions()
 {
     // Menu actions
-    connect(ui->actionRefreshData, SIGNAL(triggered()), this, SLOT(fetch()));
+    connect(ui->actionRefreshData, SIGNAL(triggered()), this, SLOT(fetchData()));
     connect(ui->actionDataClipboard, SIGNAL(triggered()), this, SLOT(fillClipboard()));
-    connect(ui->actionAbout, SIGNAL(triggered()), this, SLOT(about()));
-    connect(ui->actionAbout_QT, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
+    connect(ui->actionAbout, SIGNAL(triggered()), this, SLOT(showAbout()));
     connect(ui->actionExit, SIGNAL(triggered()), this, SLOT(close()));
-}
-
-/**
- * About
- */
-void MainWindow::about()
-{
-    QMessageBox::about(this, tr("About"),
-       tr("<b>PlaatSoft Downloads Statistics</b><br>"
-          "Version 0.60 (Build 27-03-2010)<br>"
-          "<br>"
-          "Created by <i>wplaat</i><br>"
-          "<br>"
-          "This tool collects from several websites the<br>"
-          "PlaatSoft download statistics and shows them.<br><br>"
-          "All copyrights reserved (c) "
-          "<a href='http://www.plaatsoft.nl'>PlaatSoft</a> 2008-2010"));
 }
 
 /**
@@ -224,10 +217,34 @@ void MainWindow::fillClipboard()
 }
 
 /**
- * fetch
+ * Parse data for version information
+ */
+void MainWindow::parseVersion(QString response)
+{
+   qDebug() << response;
+
+   QString text;
+   int pos = response.indexOf("Version ");
+   QString version = response.mid(pos+8,4).simplified();
+   if ((version.size()>0) && (version.compare(VERSION)!=0))
+   {
+       text="New version ";
+       text+=version;
+       text+=" of PlaatStats is available!<br>";
+       text+="Check out http://www.plaatsoft.nl for more information.";
+
+       QMessageBox::information(this, tr("Software update"),text);
+   }
+
+   ui->actionRefreshData->setEnabled(true);
+   ui->actionCheck_for_update->setEnabled(true);
+}
+
+/**
+ * fetchData
  * Network Request
  */
-void MainWindow::fetch()
+void MainWindow::fetchData()
 {
     // Clear data
     ui->pong2Edit->setText("");
@@ -267,10 +284,48 @@ void MainWindow::fetch()
 
     // Disable button during request.
     ui->actionRefreshData->setEnabled(false);
+    ui->actionCheck_for_update->setEnabled(false);
 
     // Start startmachine
     sm=0;
     stateMachine();
+}
+
+/**
+ * Create http request for version data.
+ */
+void MainWindow::fetchVersion()
+{
+    QSettings qSettings("PlaatSoft", "PlaatStats");
+
+    // Proxy support
+    bool enabled = qSettings.value("proxyEnabled",false).toBool();
+    QNetworkProxy proxy;
+    if (enabled)
+    {
+        qDebug() << "Proxy enabled";
+        bool ok;
+        proxy.setUser(qSettings.value("loginName","").toString());
+        proxy.setPassword(settings.decrypt(qSettings.value("password","").toString()));
+        proxy.setPort(qSettings.value("proxyPort","").toString().toInt(&ok, 10));
+        proxy.setHostName(qSettings.value("proxyAddress","").toString());
+        proxy.setType(QNetworkProxy::HttpProxy);
+    } else {
+        proxy.setType(QNetworkProxy::NoProxy);
+    }
+    manager->setProxy(proxy);
+
+    QNetworkRequest request;
+    request.setUrl(QUrl("http://www.plaatsoft.nl/service/plaatstats.html"));
+
+    manager->get(request);
+
+    // StateMachine 10 event
+    sm=10;
+
+    // Disable button during request.
+    ui->actionRefreshData->setEnabled(false);
+    ui->actionCheck_for_update->setEnabled(false);
 }
 
 /**
@@ -280,6 +335,25 @@ void MainWindow::stateMachine()
 {
     QString address;
     qDebug() << "stateMachine:enter " << sm;
+
+    QSettings qSettings("PlaatSoft", "PlaatStats");
+
+    // Proxy support
+    bool enabled = qSettings.value("proxyEnabled",false).toBool();
+    QNetworkProxy proxy;
+    if (enabled)
+    {
+        qDebug() << "Proxy enabled";
+        bool ok;
+        proxy.setUser(qSettings.value("loginName","").toString());
+        proxy.setPassword(settings.decrypt(qSettings.value("password","").toString()));
+        proxy.setPort(qSettings.value("proxyPort","").toString().toInt(&ok, 10));
+        proxy.setHostName(qSettings.value("proxyAddress","").toString());
+        proxy.setType(QNetworkProxy::HttpProxy);
+    } else {
+        proxy.setType(QNetworkProxy::NoProxy);
+    }
+    manager->setProxy(proxy);
 
     switch (sm)
     {
@@ -598,9 +672,17 @@ void MainWindow::stateMachine()
               ui->towerDefenseEdit3->setText(formatNumber(sum));
 
               ui->actionRefreshData->setEnabled(true);
+              ui->actionCheck_for_update->setEnabled(true);
               calculate();
 
               sm++;
+            }
+            break;
+
+        case 10:
+            {
+                // New version control
+                parseVersion(result);
             }
             break;
     }
@@ -729,15 +811,6 @@ void MainWindow::replyFinished(QNetworkReply *reply)
 }
 
 /**
- * Close Window
- */
-void MainWindow::closeEvent(QCloseEvent *event)
-{
-   // Store current window position
-   writeSettings();
-}
-
-/**
  * Read settings out Windows registry
  */
 void MainWindow::readSettings()
@@ -800,5 +873,51 @@ QString MainWindow::formatNumber(QString number)
 }
 
 // ---------------------------------------------------
+// User Actions
+// ---------------------------------------------------
+
+/**
+ * Close Window
+ */
+void MainWindow::closeEvent(QCloseEvent *event)
+{
+   // Store current window position
+   writeSettings();
+}
+
+/**
+ * Show about window
+ */
+void MainWindow::showAbout()
+{
+    // Set settings window position related to Main window.
+    QPoint position = QPoint(pos());
+    position.setX(position.x()-80);
+    position.setY(position.y()+100);
+    about.move(position);
+
+    // Make about window visible
+    about.show();
+}
+
+void MainWindow::on_actionSettings_triggered()
+{
+    // Set settings window position related to Main window.
+    QPoint position = QPoint(pos());
+    position.setX(position.x()-10);
+    position.setY(position.y()+120);
+    settings.move(position);
+
+    // Make settings window visible
+    settings.show();
+}
+
+void MainWindow::on_actionCheck_for_update_triggered()
+{
+   fetchVersion();
+}
+
+// ---------------------------------------------------
 // The End
 // ---------------------------------------------------
+

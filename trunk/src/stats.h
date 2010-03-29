@@ -25,6 +25,11 @@
 #include <QMainWindow>
 #include <QtNetwork>
 
+#include "settings.h"
+#include "about.h"
+
+#define VERSION  "0.60"
+
 namespace Ui {
     class MainWindow;
 }
@@ -36,8 +41,10 @@ public:
     ~MainWindow();
 
 private slots:
-    void about();
-    void fetch();
+    void on_actionCheck_for_update_triggered();
+    void on_actionSettings_triggered();
+    void showAbout();
+    void fetchData();
     void replyFinished(QNetworkReply*);
     void fillClipboard();
 
@@ -51,6 +58,8 @@ private:
     int convert(QString number);
     QString formatNumber(int number);
     QString formatNumber(QString number);
+    Settings settings;
+    About about;
 
     void calculate();
     void calculateApplTotals();
@@ -60,9 +69,11 @@ private:
     void calculateWiiTotals();
     void calculateDrupalTotals();
 
+    void fetchVersion();
     void closeEvent(QCloseEvent *event);
     void readSettings();
     void writeSettings();
+    void parseVersion(QString response);
 
     Ui::MainWindow *ui;
     QNetworkAccessManager *manager;
@@ -93,16 +104,20 @@ private:
  * - Http proxy support
  *
  * @section ReleaseNotes
- *  <b>27-03-2009 Version 0.60 (Next Development release)</b>
- *  - Rename registry key name.
+ *  <b>29-03-2009 Version 0.60</b>
+ *  - Rename registry key names.
  *  - Improve source code documentation.
+ *  - Improve about window (Add plaatsoft logo).
+ *  - Added settings window.
+ *  - Added support for http proxy.
+ *  - Added new version check.
  *  - Build PlaatStats with QtCreator v1.3.1.
  *
  *  <b>21-03-2010 Version 0.50</b>
- *  - Improve number formatting (Add . after 3 digits).
+ *  - Improve number layout (dot notation after 3 digits).
  *  - Add Windows setup file.
  *  - Add source code to Google Code
- *  - Build PlaatStats with QtCreator v1.3.81.
+ *  - Build PlaatStats with QtCreator v1.3.1.
  *
  *  <b>18-03-2010 Version 0.40</b>
  *  - Change GUI layout.

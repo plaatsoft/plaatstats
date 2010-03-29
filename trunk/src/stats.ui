@@ -745,8 +745,8 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>351</width>
-       <height>337</height>
+       <width>98</width>
+       <height>28</height>
       </rect>
      </property>
      <attribute name="label">
@@ -898,7 +898,8 @@
      <string>Help</string>
     </property>
     <addaction name="actionAbout"/>
-    <addaction name="actionAbout_QT"/>
+    <addaction name="separator"/>
+    <addaction name="actionCheck_for_update"/>
    </widget>
    <widget class="QMenu" name="menuEdit">
     <property name="title">
@@ -906,6 +907,8 @@
     </property>
     <addaction name="actionRefreshData"/>
     <addaction name="actionDataClipboard"/>
+    <addaction name="separator"/>
+    <addaction name="actionSettings"/>
    </widget>
    <addaction name="menuExit"/>
    <addaction name="menuEdit"/>
@@ -921,11 +924,6 @@
     <string>Exit</string>
    </property>
   </action>
-  <action name="actionAbout_QT">
-   <property name="text">
-    <string>About Qt</string>
-   </property>
-  </action>
   <action name="actionDataClipboard">
    <property name="text">
     <string>Data to Clipboard</string>
@@ -934,6 +932,16 @@
   <action name="actionRefreshData">
    <property name="text">
     <string>Refresh Data</string>
+   </property>
+  </action>
+  <action name="actionCheck_for_update">
+   <property name="text">
+    <string>Check for update...</string>
+   </property>
+  </action>
+  <action name="actionSettings">
+   <property name="text">
+    <string>Settings</string>
    </property>
   </action>
  </widget>

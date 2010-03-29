@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'stats.ui'
 **
-** Created: Fri 26. Mar 21:55:32 2010
+** Created: Mon 29. Mar 07:52:20 2010
 **      by: Qt User Interface Compiler version 4.6.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -31,9 +31,10 @@ class Ui_MainWindow
 public:
     QAction *actionAbout;
     QAction *actionExit;
-    QAction *actionAbout_QT;
     QAction *actionDataClipboard;
     QAction *actionRefreshData;
+    QAction *actionCheck_for_update;
+    QAction *actionSettings;
     QWidget *centralWidget;
     QToolBox *toolBox;
     QWidget *page;
@@ -118,12 +119,14 @@ public:
         actionAbout->setObjectName(QString::fromUtf8("actionAbout"));
         actionExit = new QAction(MainWindow);
         actionExit->setObjectName(QString::fromUtf8("actionExit"));
-        actionAbout_QT = new QAction(MainWindow);
-        actionAbout_QT->setObjectName(QString::fromUtf8("actionAbout_QT"));
         actionDataClipboard = new QAction(MainWindow);
         actionDataClipboard->setObjectName(QString::fromUtf8("actionDataClipboard"));
         actionRefreshData = new QAction(MainWindow);
         actionRefreshData->setObjectName(QString::fromUtf8("actionRefreshData"));
+        actionCheck_for_update = new QAction(MainWindow);
+        actionCheck_for_update->setObjectName(QString::fromUtf8("actionCheck_for_update"));
+        actionSettings = new QAction(MainWindow);
+        actionSettings->setObjectName(QString::fromUtf8("actionSettings"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         toolBox = new QToolBox(centralWidget);
@@ -318,7 +321,7 @@ public:
         toolBox->addItem(page, QString::fromUtf8("Wii Downloads"));
         page_2 = new QWidget();
         page_2->setObjectName(QString::fromUtf8("page_2"));
-        page_2->setGeometry(QRect(0, 0, 351, 337));
+        page_2->setGeometry(QRect(0, 0, 98, 28));
         groupBox_6 = new QGroupBox(page_2);
         groupBox_6->setObjectName(QString::fromUtf8("groupBox_6"));
         groupBox_6->setGeometry(QRect(0, 0, 131, 271));
@@ -396,9 +399,12 @@ public:
         menuBar->addAction(menuHelp->menuAction());
         menuExit->addAction(actionExit);
         menuHelp->addAction(actionAbout);
-        menuHelp->addAction(actionAbout_QT);
+        menuHelp->addSeparator();
+        menuHelp->addAction(actionCheck_for_update);
         menuEdit->addAction(actionRefreshData);
         menuEdit->addAction(actionDataClipboard);
+        menuEdit->addSeparator();
+        menuEdit->addAction(actionSettings);
 
         retranslateUi(MainWindow);
 
@@ -413,9 +419,10 @@ public:
         MainWindow->setWindowTitle(QString());
         actionAbout->setText(QApplication::translate("MainWindow", "About", 0, QApplication::UnicodeUTF8));
         actionExit->setText(QApplication::translate("MainWindow", "Exit", 0, QApplication::UnicodeUTF8));
-        actionAbout_QT->setText(QApplication::translate("MainWindow", "About Qt", 0, QApplication::UnicodeUTF8));
         actionDataClipboard->setText(QApplication::translate("MainWindow", "Data to Clipboard", 0, QApplication::UnicodeUTF8));
         actionRefreshData->setText(QApplication::translate("MainWindow", "Refresh Data", 0, QApplication::UnicodeUTF8));
+        actionCheck_for_update->setText(QApplication::translate("MainWindow", "Check for update...", 0, QApplication::UnicodeUTF8));
+        actionSettings->setText(QApplication::translate("MainWindow", "Settings", 0, QApplication::UnicodeUTF8));
         groupBox->setTitle(QApplication::translate("MainWindow", "PlaatSoft", 0, QApplication::UnicodeUTF8));
         label->setText(QApplication::translate("MainWindow", "Pong2", 0, QApplication::UnicodeUTF8));
         label_4->setText(QApplication::translate("MainWindow", "RedSquare", 0, QApplication::UnicodeUTF8));

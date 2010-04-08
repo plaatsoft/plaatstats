@@ -24,6 +24,10 @@
 #include "settings.h"
 #include "ui_settings.h"
 
+#include "stats.h"
+
+extern MainWindow *mainWindow;
+
 // ************************************
 // Constructor & Destructor
 // ************************************
@@ -164,6 +168,8 @@ void Settings::on_cancelButton_pressed()
 {
     readSettings();
     close();
+
+    mainWindow->setDisabled(false);
 }
 
 /**
@@ -173,6 +179,8 @@ void Settings::on_OkButton_pressed()
 {
     writeSettings();
     close();
+
+    mainWindow->setDisabled(false);
 }
 
 /**

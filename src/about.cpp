@@ -19,10 +19,14 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
+#include <QtGui>
+
 #include "about.h"
 #include "ui_about.h"
 
-#include <QtGui>
+#include "stats.h"
+
+extern MainWindow *mainWindow;
 
 // ********************************************
 // Constructor & Destructor
@@ -72,6 +76,8 @@ void About::changeEvent(QEvent *e)
 void About::on_pushButton_pressed()
 {
     close();
+
+     mainWindow->setDisabled(false);
 }
 
 // ********************************************

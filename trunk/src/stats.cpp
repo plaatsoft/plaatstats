@@ -234,6 +234,9 @@ void MainWindow::parseVersion(QString response)
        text+="Check out http://www.plaatsoft.nl for more information.";
 
        QMessageBox::information(this, tr("Software update"),text);
+   } else {
+       text = "Update check failed!";
+       QMessageBox::warning(this, tr("Warning"),text);
    }
 
    ui->actionRefreshData->setEnabled(true);
@@ -896,6 +899,9 @@ void MainWindow::showAbout()
     position.setY(position.y()+100);
     about.move(position);
 
+    // Disable Man window
+    setDisabled(true);
+
     // Make about window visible
     about.show();
 }
@@ -907,6 +913,9 @@ void MainWindow::on_actionSettings_triggered()
     position.setX(position.x()-10);
     position.setY(position.y()+120);
     settings.move(position);
+
+    // Disable Man window
+    setDisabled(true);
 
     // Make settings window visible
     settings.show();

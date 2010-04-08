@@ -104,7 +104,12 @@ private:
  * - Http proxy support
  *
  * @section ReleaseNotes
- *  <b>29-03-2009 Version 0.60</b>
+ *  <b>08-04-2010 Version 0.70</b>
+ *  - Disable main window when sub window is opened.
+ *  - Improve new version check.
+ *  - Build PlaatStats with QtCreator v1.3.1.
+ *
+ *  <b>29-03-2010 Version 0.60</b>
  *  - Rename registry key names.
  *  - Improve source code documentation.
  *  - Improve about window (Add plaatsoft logo).

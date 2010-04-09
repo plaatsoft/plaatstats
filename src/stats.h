@@ -27,8 +27,9 @@
 
 #include "settings.h"
 #include "about.h"
+#include "donate.h"
 
-#define VERSION  "0.60"
+#define VERSION  "0.70"
 
 namespace Ui {
     class MainWindow;
@@ -41,6 +42,7 @@ public:
     ~MainWindow();
 
 private slots:
+    void on_actionDonate_triggered();
     void on_actionCheck_for_update_triggered();
     void on_actionSettings_triggered();
     void showAbout();
@@ -58,8 +60,10 @@ private:
     int convert(QString number);
     QString formatNumber(int number);
     QString formatNumber(QString number);
+
     Settings settings;
     About about;
+    Donate donate;
 
     void calculate();
     void calculateApplTotals();
@@ -104,9 +108,10 @@ private:
  * - Http proxy support
  *
  * @section ReleaseNotes
- *  <b>08-04-2010 Version 0.70</b>
+ *  <b>09-04-2010 Version 0.70</b>
  *  - Disable main window when sub window is opened.
  *  - Improve new version check.
+ *  - Added donate window.
  *  - Build PlaatStats with QtCreator v1.3.1.
  *
  *  <b>29-03-2010 Version 0.60</b>

@@ -62,6 +62,14 @@ Settings::~Settings()
 // ************************************
 
 /**
+ * Close event
+ */
+void Settings::closeEvent(QCloseEvent *event)
+{
+    mainWindow->setDisabled(false);
+}
+
+/**
  * Encrypt QString (Very easy but unsave approach)
  */
 QString Settings::encrypt(QString in) {

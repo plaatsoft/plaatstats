@@ -7,7 +7,7 @@
 
 [Setup]
 AppName=PlaatStats
-AppVerName=PlaatSoft Downloads Statistics v0.60
+AppVerName=PlaatSoft Downloads Statistics v0.70
 DefaultDirName={pf}\PlaatStats
 DefaultGroupName=PlaatSoft
 UninstallDisplayIcon={app}\Statistics.exe

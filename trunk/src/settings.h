@@ -22,7 +22,7 @@
 #ifndef SETTINGS_H
 #define SETTINGS_H
 
-#include <QWidget>
+#include <QtGui>
 
 namespace Ui {
     class Settings;
@@ -42,9 +42,12 @@ protected:
 
 private:
     Ui::Settings *ui;
+
+    void closeEvent(QCloseEvent *event);
     void readSettings();
     void writeSettings();
     void updateScreen();
+
 
 private slots:
     void on_enabledCheckBox_clicked();

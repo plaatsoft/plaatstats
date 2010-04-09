@@ -1,0 +1,12 @@
+INPUT(
+./debug/main.o
+./debug/stats.o
+./debug/settings.o
+./debug/about.o
+./debug/donate.o
+./debug/moc_stats.o
+./debug/moc_settings.o
+./debug/moc_about.o
+./debug/moc_donate.o
+./debug/qrc_resource.o
+);

@@ -23,7 +23,6 @@
 
 #include "about.h"
 #include "ui_about.h"
-
 #include "stats.h"
 
 extern MainWindow *mainWindow;
@@ -56,6 +55,14 @@ About::~About()
 // ********************************************
 // Other
 // ********************************************
+
+/**
+ * Close event
+ */
+void About::closeEvent(QCloseEvent *event)
+{
+    mainWindow->setDisabled(false);
+}
 
 void About::changeEvent(QEvent *e)
 {

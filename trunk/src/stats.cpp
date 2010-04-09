@@ -926,7 +926,24 @@ void MainWindow::on_actionCheck_for_update_triggered()
    fetchVersion();
 }
 
+void MainWindow::on_actionDonate_triggered()
+{
+    // Set settings window position related to Main window.
+    QPoint position = QPoint(pos());
+    position.setX(position.x()+50);
+    position.setY(position.y()+120);
+    donate.move(position);
+
+    // Disable Man window
+    setDisabled(true);
+
+    // Make settings window visible
+    donate.show();
+}
+
 // ---------------------------------------------------
 // The End
 // ---------------------------------------------------
+
+
 

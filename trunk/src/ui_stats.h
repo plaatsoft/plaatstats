@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'stats.ui'
 **
-** Created: Tue 6. Apr 20:14:54 2010
+** Created: Fri 9. Apr 06:52:55 2010
 **      by: Qt User Interface Compiler version 4.6.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -35,6 +35,7 @@ public:
     QAction *actionRefreshData;
     QAction *actionCheck_for_update;
     QAction *actionSettings;
+    QAction *actionDonate;
     QWidget *centralWidget;
     QToolBox *toolBox;
     QWidget *page;
@@ -127,6 +128,8 @@ public:
         actionCheck_for_update->setObjectName(QString::fromUtf8("actionCheck_for_update"));
         actionSettings = new QAction(MainWindow);
         actionSettings->setObjectName(QString::fromUtf8("actionSettings"));
+        actionDonate = new QAction(MainWindow);
+        actionDonate->setObjectName(QString::fromUtf8("actionDonate"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         toolBox = new QToolBox(centralWidget);
@@ -321,7 +324,7 @@ public:
         toolBox->addItem(page, QString::fromUtf8("Wii Downloads"));
         page_2 = new QWidget();
         page_2->setObjectName(QString::fromUtf8("page_2"));
-        page_2->setGeometry(QRect(0, 0, 98, 28));
+        page_2->setGeometry(QRect(0, 0, 100, 30));
         groupBox_6 = new QGroupBox(page_2);
         groupBox_6->setObjectName(QString::fromUtf8("groupBox_6"));
         groupBox_6->setGeometry(QRect(0, 0, 131, 271));
@@ -398,9 +401,11 @@ public:
         menuBar->addAction(menuEdit->menuAction());
         menuBar->addAction(menuHelp->menuAction());
         menuExit->addAction(actionExit);
-        menuHelp->addAction(actionAbout);
+        menuHelp->addAction(actionDonate);
         menuHelp->addSeparator();
         menuHelp->addAction(actionCheck_for_update);
+        menuHelp->addSeparator();
+        menuHelp->addAction(actionAbout);
         menuEdit->addAction(actionRefreshData);
         menuEdit->addAction(actionDataClipboard);
         menuEdit->addSeparator();
@@ -423,6 +428,7 @@ public:
         actionRefreshData->setText(QApplication::translate("MainWindow", "Refresh Data", 0, QApplication::UnicodeUTF8));
         actionCheck_for_update->setText(QApplication::translate("MainWindow", "Check for update...", 0, QApplication::UnicodeUTF8));
         actionSettings->setText(QApplication::translate("MainWindow", "Settings", 0, QApplication::UnicodeUTF8));
+        actionDonate->setText(QApplication::translate("MainWindow", "Donate", 0, QApplication::UnicodeUTF8));
         groupBox->setTitle(QApplication::translate("MainWindow", "PlaatSoft", 0, QApplication::UnicodeUTF8));
         label->setText(QApplication::translate("MainWindow", "Pong2", 0, QApplication::UnicodeUTF8));
         label_4->setText(QApplication::translate("MainWindow", "RedSquare", 0, QApplication::UnicodeUTF8));

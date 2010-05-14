@@ -36,8 +36,8 @@
 /**
  * Constructor
  */
-MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
-{
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
+
     ui->setupUi(this);
 
     readSettings();
@@ -60,8 +60,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 /**
  * Destructor
  */
-MainWindow::~MainWindow()
-{
+MainWindow::~MainWindow() {
+
     delete ui;
 }
 
@@ -72,13 +72,16 @@ MainWindow::~MainWindow()
 /**
  * Change Event
  */
-void MainWindow::changeEvent(QEvent *e)
-{
+void MainWindow::changeEvent(QEvent *e) {
+
     QMainWindow::changeEvent(e);
+
     switch (e->type()) {
+
     case QEvent::LanguageChange:
         ui->retranslateUi(this);
         break;
+
     default:
         break;
     }
@@ -124,9 +127,9 @@ void MainWindow::fillClipboard()
     text += "<td>";
     text += ui->pong2Edit3->text();
     text += "</td>";
-    text += "<td>";
+    text += "<td><strong>";
     text += ui->pong2Edit4->text();
-    text += "</td>";
+    text += "</strong></td>";
     text += "</tr>";
 
     text += "<tr>";
@@ -140,9 +143,9 @@ void MainWindow::fillClipboard()
     text += "<td>";
     text += ui->bibleQuizEdit3->text();
     text += "</td>";
-    text += "<td>";
+    text += "<td><strong>";
     text += ui->bibleQuizEdit4->text();
-    text += "</td>";
+    text += "</strong></td>";
     text += "</tr>";
 
     text += "<tr>";
@@ -156,9 +159,9 @@ void MainWindow::fillClipboard()
     text += "<td>";
     text += ui->redSquareEdit3->text();
     text += "</td>";
-    text += "<td>";
+    text += "<td><strong>";
     text += ui->redSquareEdit4->text();
-    text += "</td>";
+    text += "<strong></td>";
     text += "</tr>";
 
     text += "<tr>";
@@ -172,9 +175,9 @@ void MainWindow::fillClipboard()
     text += "<td>";
     text += ui->spaceBubbleEdit3->text();
     text += "</td>";
-    text += "<td>";
+    text += "<td><strong>";
     text += ui->spaceBubbleEdit4->text();
-    text += "</td>";
+    text += "</strong></td>";
     text += "</tr>";
 
     text += "<tr>";
@@ -188,9 +191,9 @@ void MainWindow::fillClipboard()
     text += "<td>";
     text += ui->towerDefenseEdit3->text();
     text += "</td>";
-    text += "<td>";
+    text += "<td><strong>";
     text += ui->towerDefenseEdit4->text();
-    text += "</td>";
+    text += "</strong></td>";
     text += "</tr>";
 
     text += "<tr>";
@@ -212,6 +215,70 @@ void MainWindow::fillClipboard()
     text += "</tbody>";
     text += "</table>";
 
+    text += "<table border='1'>" ;
+    text += "<tbody>" ;
+    text += "<tr>";
+    text += "<td><strong>Modules</strong></td>";
+    text += "<td><strong>PlaatSoft</strong></td>";
+    text += "<td><strong>Google Code</strong></td>";
+    text += "<td><strong>Totals</strong></td>";
+    text += "</tr>";
+
+    text += "<tr>";
+    text += "<td>Drupal Addressbook</td>";
+    text += "<td>";
+    text += ui->addressbookEdit1->text();
+    text += "</td>";
+    text += "<td>";
+    text += ui->addressbookEdit2->text();
+    text += "</td>";
+    text += "<td><strong>";
+    text += ui->addressbookEdit3->text();
+    text += "</strong></td>";
+    text += "</tr>";
+
+    text += "<tr>";
+    text += "<td>Drupal Event Notification</td>";
+    text += "<td>";
+    text += ui->eventNotificationEdit1->text();
+    text += "</td>";
+    text += "<td>";
+    text += ui->eventNotificationEdit2->text();
+    text += "</td>";
+    text += "<td><strong>";
+    text += ui->eventNotificationEdit3->text();
+    text += "</strong></td>";
+    text += "</tr>";
+
+    text += "<tr>";
+    text += "<td>Drupal Church Administration</td>";
+    text += "<td>";
+    text += ui->churchEdit1->text();
+    text += "</td>";
+    text += "<td>";
+    text += ui->churchEdit2->text();
+    text += "</td>";
+    text += "<td><strong>";
+    text += ui->churchEdit3->text();
+    text += "</strong></td>";
+    text += "</tr>";
+
+    text += "<tr>";
+    text += "<td><strong>Totals</strong></td>";
+    text += "<td><strong>";
+    text += ui->totalsDrupalEdit1->text();
+    text += "</strong></td>";
+    text += "<td><strong>";
+    text += ui->totalsDrupalEdit2->text();
+    text += "</strong></td>";
+    text += "<td><strong>";
+    text += ui->totalsDrupalEdit3->text();
+    text += "</strong></td>";
+    text += "</tr>";
+
+    text += "</tbody>";
+    text += "</table>";
+
     QClipboard *clipboard = QApplication::clipboard();
     clipboard->setText(text);
 }
@@ -226,14 +293,20 @@ void MainWindow::parseVersion(QString response)
    QString text;
    int pos = response.indexOf("Version ");
    QString version = response.mid(pos+8,4).simplified();
-   if ((version.size()>0) && (version.compare(VERSION)!=0))
-   {
-       text="New version ";
-       text+=version;
-       text+=" of PlaatStats is available!<br>";
-       text+="Check out http://www.plaatsoft.nl for more information.";
+   qDebug() << "Version = [" << version << "]";
 
-       QMessageBox::information(this, tr("Software update"),text);
+   if (version.size()>0) {
+
+       if (version.compare(VERSION)!=0) {
+            text="New version ";
+            text+=version;
+            text+=" of PlaatStats is available!<br>";
+            text+="Check out http://www.plaatsoft.nl for more information.";
+        } else {
+            text="No update available!";
+        }
+        QMessageBox::information(this, tr("Software update"),text);
+
    } else {
        text = "Update check failed!";
        QMessageBox::warning(this, tr("Warning"),text);
@@ -247,8 +320,8 @@ void MainWindow::parseVersion(QString response)
  * fetchData
  * Network Request
  */
-void MainWindow::fetchData()
-{
+void MainWindow::fetchData() {
+
     // Clear data
     ui->pong2Edit->setText("");
     ui->pong2Edit2->setText("");
@@ -281,9 +354,20 @@ void MainWindow::fetchData()
     ui->totals4->setText("");
 
     ui->addressbookEdit1->setText("");
+    ui->addressbookEdit2->setText("");
+    ui->addressbookEdit3->setText("");
+
     ui->eventNotificationEdit1->setText("");
+    ui->eventNotificationEdit2->setText("");
+    ui->eventNotificationEdit3->setText("");
+
     ui->churchEdit1->setText("");
+    ui->churchEdit2->setText("");
+    ui->churchEdit3->setText("");
+
     ui->totalsDrupalEdit1->setText("");
+    ui->totalsDrupalEdit2->setText("");
+    ui->totalsDrupalEdit3->setText("");
 
     // Disable button during request.
     ui->actionRefreshData->setEnabled(false);
@@ -297,8 +381,8 @@ void MainWindow::fetchData()
 /**
  * Create http request for version data.
  */
-void MainWindow::fetchVersion()
-{
+void MainWindow::fetchVersion() {
+
     QSettings qSettings("PlaatSoft", "PlaatStats");
 
     // Proxy support
@@ -344,8 +428,7 @@ void MainWindow::fetchVersion()
 /**
  * StateMachine
  */
-void MainWindow::stateMachine()
-{
+void MainWindow::stateMachine() {
     QString address;
     qDebug() << "stateMachine:enter " << sm;
 
@@ -358,8 +441,6 @@ void MainWindow::stateMachine()
     {
         QNetworkProxyQuery npq(QUrl("http://www.google.com"));
         QList<QNetworkProxy> listOfProxies = QNetworkProxyFactory::systemProxyForQuery(npq);
-
-
 
         qDebug() << "Proxy enabled";
         bool ok;

@@ -66,11 +66,15 @@ private:
     Donate donate;
 
     void calculate();
-    void calculateApplTotals();
-    void calculateWebsite();
-    void calculateHomebrewBrowser();
-    void calculateGoogleCode();
+
+    void calculateWiiApplTotals();
+    void calculateWiiMyWebsite();
+    void calculateWiiHomebrewBrowser();
+    void calculateWiiGoogleCode();
     void calculateWiiTotals();
+
+    void calculateDrupalMyWebsite();
+    void calculateDrupalGoogleCode();
     void calculateDrupalTotals();
 
     void fetchVersion();
@@ -108,10 +112,12 @@ private:
  * - Http proxy support
  *
  * @section ReleaseNotes
- *  <b>09-04-2010 Version 0.70</b>
+ *  <b>14-05-2010 Version 0.70</b>
  *  - Disable main window when sub window is opened.
  *  - Improve new version check.
  *  - Added donate window.
+ *  - Added Drupal Google Code downloads to statistics.
+ *  - Bugfix: Drupal ChurchAdmin module is now also counted.
  *  - Build PlaatStats with QtCreator v1.3.1.
  *
  *  <b>29-03-2010 Version 0.60</b>

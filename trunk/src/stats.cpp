@@ -308,8 +308,18 @@ void MainWindow::fetchVersion()
     {
         qDebug() << "Proxy enabled";
         bool ok;
-        proxy.setUser(qSettings.value("loginName","").toString());
-        proxy.setPassword(settings.decrypt(qSettings.value("password","").toString()));
+        QString login = qSettings.value("loginName","").toString();
+        //qDebug() << "login=" << login;
+        if (login.length()>0)
+        {
+            proxy.setUser(login);
+        }
+        QString password = settings.decrypt(qSettings.value("password","").toString());
+        //qDebug() << "password=" << password;
+        if (password.length()>0)
+        {
+            proxy.setPassword(password);
+        }
         proxy.setPort(qSettings.value("proxyPort","").toString().toInt(&ok, 10));
         proxy.setHostName(qSettings.value("proxyAddress","").toString());
         proxy.setType(QNetworkProxy::HttpProxy);
@@ -323,8 +333,8 @@ void MainWindow::fetchVersion()
 
     manager->get(request);
 
-    // StateMachine 10 event
-    sm=10;
+    // StateMachine 20 event
+    sm=20;
 
     // Disable button during request.
     ui->actionRefreshData->setEnabled(false);
@@ -346,10 +356,26 @@ void MainWindow::stateMachine()
     QNetworkProxy proxy;
     if (enabled)
     {
+        QNetworkProxyQuery npq(QUrl("http://www.google.com"));
+        QList<QNetworkProxy> listOfProxies = QNetworkProxyFactory::systemProxyForQuery(npq);
+
+
+
         qDebug() << "Proxy enabled";
         bool ok;
-        proxy.setUser(qSettings.value("loginName","").toString());
-        proxy.setPassword(settings.decrypt(qSettings.value("password","").toString()));
+        QString login = qSettings.value("loginName","").toString();
+        //qDebug() << "login=" << login;
+        if (login.length()>0)
+        {
+            proxy.setUser(login);
+        }
+        QString password = settings.decrypt(qSettings.value("password","").toString());
+        //qDebug() << "password=" << password;
+        if (password.length()>0)
+        {
+            proxy.setPassword(password);
+        }
+
         proxy.setPort(qSettings.value("proxyPort","").toString().toInt(&ok, 10));
         proxy.setHostName(qSettings.value("proxyAddress","").toString());
         proxy.setType(QNetworkProxy::HttpProxy);
@@ -446,9 +472,9 @@ void MainWindow::stateMachine()
                 ui->eventNotificationEdit1->setText(QString::number(sum));
 
                 sum=0;
-                j = result.indexOf("ChurchAdministration-v5.x.zip",0);
-                t = result.mid(j,80);
-                tmp = t.mid(t.indexOf("-")+2,5).replace(",",".");
+                j = result.indexOf("oostpoort-v6.x.zip",0);
+                t = result.mid(j+20,80);
+                tmp = t.mid(t.indexOf("-")+2,3).replace(",",".");
                 sum += tmp.toInt(&ok, 10);
 
                 ui->churchEdit1->setText(QString::number(sum));
@@ -674,15 +700,114 @@ void MainWindow::stateMachine()
               qDebug() << "TowerDefense download =" << sum;
               ui->towerDefenseEdit3->setText(formatNumber(sum));
 
-              ui->actionRefreshData->setEnabled(true);
-              ui->actionCheck_for_update->setEnabled(true);
-              calculate();
+              address = QString("http://code.google.com/p/drupal-addressbook/downloads/list");
+              qDebug() << "Fetch " << address;
+              manager->get(QNetworkRequest(address));
 
+              calculate();
               sm++;
             }
             break;
 
-        case 10:
+   case 8: {
+                // Get Addressbook Google code download
+                bool ok;
+                int sum=0;
+                int j = result.indexOf("vt col_4",0);
+                QString buffer(result);
+                do {
+                  j+=190;
+                  qDebug() << "j=" << j;
+                  QString t = buffer.mid(j,50);
+                  qDebug() << "t=" << t;
+                  int k = t.indexOf(">");
+                  qDebug() << "k=" << k;
+                  QString tmp = t.mid(k+1,8).simplified();
+                  sum += tmp.toInt(&ok, 10);
+                  qDebug() << "sum =" << sum;
+                  buffer = buffer.mid(j);
+                  qDebug() << "buffer size =" << buffer.size();
+                  j = buffer.indexOf("vt col_4",0);
+                } while (j!=-1);
+
+                qDebug() << "Addressbook download =" << sum;
+                ui->addressbookEdit2->setText(formatNumber(sum));
+
+                address = QString("http://code.google.com/p/drupal-eventnotification/downloads/list");
+                qDebug() << "Fetch " << address;
+                manager->get(QNetworkRequest(address));
+
+                calculate();
+                sm++;
+              }
+              break;
+
+    case 9: {
+                 // Get EventNofication Google code download
+                 bool ok;
+                 int sum=0;
+                 int j = result.indexOf("vt col_4",0);
+                 QString buffer(result);
+                 do {
+                   j+=190;
+                   qDebug() << "j=" << j;
+                   QString t = buffer.mid(j,50);
+                   qDebug() << "t=" << t;
+                   int k = t.indexOf(">");
+                   qDebug() << "k=" << k;
+                   QString tmp = t.mid(k+1,8).simplified();
+                   sum += tmp.toInt(&ok, 10);
+                   qDebug() << "sum =" << sum;
+                   buffer = buffer.mid(j);
+                   qDebug() << "buffer size =" << buffer.size();
+                   j = buffer.indexOf("vt col_4",0);
+                 } while (j!=-1);
+
+                 qDebug() << "EventNotification download =" << sum;
+                 ui->eventNotificationEdit2->setText(formatNumber(sum));
+
+                 address = QString("http://code.google.com/p/drupal-oostpoort/downloads/list");
+                 qDebug() << "Fetch " << address;
+                 manager->get(QNetworkRequest(address));
+
+                 calculate();
+                 sm++;
+               }
+               break;
+
+    case 10: {
+                 // Get ChurchAdmin Google code download
+                 bool ok;
+                 int sum=0;
+                 int j = result.indexOf("vt col_4",0);
+                 QString buffer(result);
+                 do {
+                   j+=190;
+                   qDebug() << "j=" << j;
+                   QString t = buffer.mid(j,50);
+                   qDebug() << "t=" << t;
+                   int k = t.indexOf(">");
+                   qDebug() << "k=" << k;
+                   QString tmp = t.mid(k+1,8).simplified();
+                   sum += tmp.toInt(&ok, 10);
+                   qDebug() << "sum =" << sum;
+                   buffer = buffer.mid(j);
+                   qDebug() << "buffer size =" << buffer.size();
+                   j = buffer.indexOf("vt col_4",0);
+                 } while (j!=-1);
+
+                 qDebug() << "ChurchAdmin download =" << sum;
+                 ui->churchEdit2->setText(formatNumber(sum));
+
+                 ui->actionRefreshData->setEnabled(true);
+                 ui->actionCheck_for_update->setEnabled(true);
+
+                 calculate();
+                 sm++;
+               }
+               break;
+
+        case 20:
             {
                 // New version control
                 parseVersion(result);
@@ -696,18 +821,21 @@ void MainWindow::stateMachine()
  */
 void MainWindow::calculate()
 {
-    calculateApplTotals();
-    calculateWebsite();
-    calculateHomebrewBrowser();
-    calculateGoogleCode();
-    calculateDrupalTotals();
+    calculateWiiApplTotals();
+    calculateWiiMyWebsite();
+    calculateWiiHomebrewBrowser();
+    calculateWiiGoogleCode();
     calculateWiiTotals();
+
+    calculateDrupalMyWebsite();
+    calculateDrupalGoogleCode();
+    calculateDrupalTotals();
 }
 
 /**
- * Calculate Application totals
+ * Calculate Wii Application totals
  */
-void MainWindow::calculateApplTotals()
+void MainWindow::calculateWiiApplTotals()
 {
    int a = convert(ui->pong2Edit->text());
    int b = convert(ui->pong2Edit2->text());
@@ -736,9 +864,9 @@ void MainWindow::calculateApplTotals()
 }
 
 /**
- * Calculate My Website totals
+ * Calculate Wii My website totals
  */
-void MainWindow::calculateWebsite()
+void MainWindow::calculateWiiMyWebsite()
 {
    int a = convert(ui->pong2Edit->text());
    int b = convert(ui->bibleQuizEdit->text());
@@ -751,7 +879,7 @@ void MainWindow::calculateWebsite()
 /**
  * Calculate CodeMii totals
  */
-void MainWindow::calculateHomebrewBrowser()
+void MainWindow::calculateWiiHomebrewBrowser()
 {
    int a = convert(ui->pong2Edit2->text());
    int b = convert(ui->bibleQuizEdit2->text());
@@ -764,7 +892,7 @@ void MainWindow::calculateHomebrewBrowser()
 /**
  * Calculate Google Code totals
  */
-void MainWindow::calculateGoogleCode()
+void MainWindow::calculateWiiGoogleCode()
 {
    int a = convert(ui->pong2Edit3->text());
    int b = convert(ui->bibleQuizEdit3->text());
@@ -789,14 +917,47 @@ void MainWindow::calculateWiiTotals()
 }
 
 /**
- * Calculate Drupals totals
+ * Calculate Drupals My Website total
  */
-void MainWindow::calculateDrupalTotals()
+void MainWindow::calculateDrupalMyWebsite()
 {
    int a = convert(ui->addressbookEdit1->text());
    int b = convert(ui->eventNotificationEdit1->text());
    int c = convert(ui->churchEdit1->text());
    ui->totalsDrupalEdit1->setText(formatNumber(a+b+c));
+}
+
+/**
+ * Calculate Drupals Google Code total
+ */
+void MainWindow::calculateDrupalGoogleCode()
+{
+   int a = convert(ui->addressbookEdit2->text());
+   int b = convert(ui->eventNotificationEdit2->text());
+   int c = convert(ui->churchEdit2->text());
+   ui->totalsDrupalEdit2->setText(formatNumber(a+b+c));
+}
+
+/**
+ * Calculate Drupals Totals
+ */
+void MainWindow::calculateDrupalTotals()
+{
+   int a = convert(ui->addressbookEdit1->text());
+   int b = convert(ui->addressbookEdit2->text());
+   ui->addressbookEdit3->setText(formatNumber(a+b));
+
+   a = convert(ui->eventNotificationEdit1->text());
+   b = convert(ui->eventNotificationEdit2->text());
+   ui->eventNotificationEdit3->setText(formatNumber(a+b));
+
+   a = convert(ui->churchEdit1->text());
+   b = convert(ui->churchEdit2->text());
+   ui->churchEdit3->setText(formatNumber(a+b));
+
+   a = convert(ui->totalsDrupalEdit1->text());
+   b = convert(ui->totalsDrupalEdit2->text());
+   ui->totalsDrupalEdit3->setText(formatNumber(a+b));
 }
 
 /**
@@ -808,6 +969,8 @@ void MainWindow::replyFinished(QNetworkReply *reply)
     result = reply->readAll();
 
     qDebug() << "Request " << sm << "Bytes received " << sA;
+
+    qDebug() << result;
 
     // Request received, go back to statemachine to analyse information.
     stateMachine();

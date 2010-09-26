@@ -7,7 +7,7 @@
 
 [Setup]
 AppName=PlaatStats
-AppVerName=PlaatSoft Downloads Statistics v0.70
+AppVerName=PlaatSoft Downloads Statistics v0.80
 DefaultDirName={pf}\PlaatStats
 DefaultGroupName=PlaatSoft
 UninstallDisplayIcon={app}\Statistics.exe
@@ -22,9 +22,15 @@ Source: "src\release\mingwm10.dll"; DestDir: "{app}"
 Source: "src\release\QtCore4.dll"; DestDir: "{app}"
 Source: "src\release\QtGui4.dll"; DestDir: "{app}"
 Source: "src\release\QtNetwork4.dll"; DestDir: "{app}"
+Source: "src\release\QtXml4.dll"; DestDir: "{app}"
 Source: "src\release\license.txt"; DestDir: "{app}"; Flags: isreadme
 
 [Icons]
 Name: "{group}\PlaatStats\PlaatStats"; Filename: "{app}\Statistics.exe"
 Name: "{commondesktop}\PlaatSoft Statistics"; Filename: "{app}\Statistics.exe"
 Name: "{group}\PlaatStats\Uninstaller"; Filename: "{uninstallexe}"
+
+[Registry]
+Root: HKCU; Subkey: "Software\PlaatSoft\RedSquare"; ValueName: "target"; ValueData: {app}; ValueType: string;  Flags: uninsdeletekeyifempty
+Root: HKCU; Subkey: "Software\PlaatSoft\RedSquare"; ValueName: "username"; ValueData: {username}; ValueType: string;  Flags: uninsdeletekeyifempty
+

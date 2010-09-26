@@ -29,7 +29,7 @@
 #include "about.h"
 #include "donate.h"
 
-#define VERSION  "0.70"
+#define VERSION  "0.80"
 
 namespace Ui {
     class MainWindow;
@@ -112,6 +112,12 @@ private:
  * - Http proxy support
  *
  * @section ReleaseNotes
+ *
+ *  <b>26-09-2010 Version 0.80</b>
+ *  - Maintenance Release
+ *  - Added Qt 4.7.0
+ *  - Build PlaatStats with QtCreator v2.0.0
+ *
  *  <b>14-05-2010 Version 0.70</b>
  *  - Disable main window when sub window is opened.
  *  - Improve new version check.

@@ -77,6 +77,10 @@ private:
     void calculateDrupalGoogleCode();
     void calculateDrupalTotals();
 
+    void calculateWindowsMyWebsite();
+    void calculateWindowsGoogleCode();
+    void calculateWindowsTotals();
+
     void fetchVersion();
     void closeEvent(QCloseEvent *event);
     void readSettings();
@@ -113,8 +117,10 @@ private:
  *
  * @section ReleaseNotes
  *
- *  <b>26-09-2010 Version 0.80</b>
- *  - Maintenance Release
+ *  <b>02-10-2010 Version 0.80</b>
+ *  - Added KnightQuest game for Nintendo Wii and Windows
+ *  - Added in clipboard export Windows tools and games.
+ *  - Maintenance Release.
  *  - Added Qt 4.7.0
  *  - Build PlaatStats with QtCreator v2.0.0
  *

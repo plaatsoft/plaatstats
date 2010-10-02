@@ -48,8 +48,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect( manager, SIGNAL(finished(QNetworkReply*)), this, SLOT(replyFinished(QNetworkReply*)) );
 
     // Set fix windows form size.
-    setMinimumSize(370,428);
-    setMaximumSize(370,428);
+    setMinimumSize(370,503);
+    setMaximumSize(370,503);
 
     setWindowTitle(tr("PlaatSoft Statistics " VERSION));
 
@@ -109,7 +109,7 @@ void MainWindow::fillClipboard()
     QString text = "<table border='1'>" ;
     text += "<tbody>" ;
     text += "<tr>";
-    text += "<td><strong>Game</strong></td>";
+    text += "<td><strong>Wii game</strong></td>";
     text += "<td><strong>PlaatSoft</strong></td>";
     text += "<td><strong>CodeMii</strong></td>";
     text += "<td><strong>Google Code</strong></td>";
@@ -117,7 +117,7 @@ void MainWindow::fillClipboard()
     text += "</tr>";
 
     text += "<tr>";
-    text += "<td>Wii Pong2</td>";
+    text += "<td>Pong2</td>";
     text += "<td>";
     text += ui->pong2Edit->text();
     text += "</td>";
@@ -133,7 +133,7 @@ void MainWindow::fillClipboard()
     text += "</tr>";
 
     text += "<tr>";
-    text += "<td>Wii BibleQuiz</td>";
+    text += "<td>BibleQuiz</td>";
     text += "<td>";
     text += ui->bibleQuizEdit->text();
     text += "</td>";
@@ -149,7 +149,7 @@ void MainWindow::fillClipboard()
     text += "</tr>";
 
     text += "<tr>";
-    text += "<td>Wii RedSquare</td>";
+    text += "<td>RedSquare</td>";
     text += "<td>";
     text += ui->redSquareEdit->text();
     text += "</td>";
@@ -165,7 +165,7 @@ void MainWindow::fillClipboard()
     text += "</tr>";
 
     text += "<tr>";
-    text += "<td>Wii SpaceBubble</td>";
+    text += "<td>SpaceBubble</td>";
     text += "<td>";
     text += ui->spaceBubbleEdit->text();
     text += "</td>";
@@ -181,7 +181,7 @@ void MainWindow::fillClipboard()
     text += "</tr>";
 
     text += "<tr>";
-    text += "<td>Wii TowerDefense</td>";
+    text += "<td>TowerDefense</td>";
     text += "<td>";
     text += ui->towerDefenseEdit->text();
     text += "</td>";
@@ -193,6 +193,22 @@ void MainWindow::fillClipboard()
     text += "</td>";
     text += "<td><strong>";
     text += ui->towerDefenseEdit4->text();
+    text += "</strong></td>";
+    text += "</tr>";
+
+    text += "<tr>";
+    text += "<td>KnightsQuest</td>";
+    text += "<td>";
+    text += ui->KnightsQuestEdit->text();
+    text += "</td>";
+    text += "<td>";
+    text += ui->KnightsQuestEdit2->text();
+    text += "</td>";
+    text += "<td>";
+    text += ui->KnightsQuestEdit3->text();
+    text += "</td>";
+    text += "<td><strong>";
+    text += ui->KnightsQuestEdit4->text();
     text += "</strong></td>";
     text += "</tr>";
 
@@ -215,17 +231,19 @@ void MainWindow::fillClipboard()
     text += "</tbody>";
     text += "</table>";
 
+    // ---------------------------------------------
+
     text += "<table border='1'>" ;
     text += "<tbody>" ;
     text += "<tr>";
-    text += "<td><strong>Modules</strong></td>";
+    text += "<td><strong>Drupal module</strong></td>";
     text += "<td><strong>PlaatSoft</strong></td>";
     text += "<td><strong>Google Code</strong></td>";
     text += "<td><strong>Totals</strong></td>";
     text += "</tr>";
 
     text += "<tr>";
-    text += "<td>Drupal Addressbook</td>";
+    text += "<td>Addressbook</td>";
     text += "<td>";
     text += ui->addressbookEdit1->text();
     text += "</td>";
@@ -238,7 +256,7 @@ void MainWindow::fillClipboard()
     text += "</tr>";
 
     text += "<tr>";
-    text += "<td>Drupal Event Notification</td>";
+    text += "<td>Event Notification</td>";
     text += "<td>";
     text += ui->eventNotificationEdit1->text();
     text += "</td>";
@@ -251,7 +269,7 @@ void MainWindow::fillClipboard()
     text += "</tr>";
 
     text += "<tr>";
-    text += "<td>Drupal Church Administration</td>";
+    text += "<td>Church Administration</td>";
     text += "<td>";
     text += ui->churchEdit1->text();
     text += "</td>";
@@ -273,6 +291,85 @@ void MainWindow::fillClipboard()
     text += "</strong></td>";
     text += "<td><strong>";
     text += ui->totalsDrupalEdit3->text();
+    text += "</strong></td>";
+    text += "</tr>";
+
+    text += "</tbody>";
+    text += "</table>";
+
+    // ---------------------------------------------
+
+    text += "<table border='1'>" ;
+    text += "<tbody>" ;
+    text += "<tr>";
+    text += "<td><strong>Windows software</strong></td>";
+    text += "<td><strong>PlaatSoft</strong></td>";
+    text += "<td><strong>Google Code</strong></td>";
+    text += "<td><strong>Totals</strong></td>";
+    text += "</tr>";
+
+    text += "<tr>";
+    text += "<td>PlaatStats</td>";
+    text += "<td>";
+    text += ui->plaatstatsEdit1->text();
+    text += "</td>";
+    text += "<td>";
+    text += ui->plaatstatsEdit2->text();
+    text += "</td>";
+    text += "<td><strong>";
+    text += ui->plaatstatsEdit3->text();
+    text += "</strong></td>";
+    text += "</tr>";
+
+    text += "<tr>";
+    text += "<td>PlaatScore</td>";
+    text += "<td>";
+    text += ui->plaatscoreEdit1->text();
+    text += "</td>";
+    text += "<td>";
+    text += ui->plaatscoreEdit2->text();
+    text += "</td>";
+    text += "<td><strong>";
+    text += ui->plaatscoreEdit3->text();
+    text += "</strong></td>";
+    text += "</tr>";
+
+    text += "<tr>";
+    text += "<td>RedSquare</td>";
+    text += "<td>";
+    text += ui->winredsquareEdit1->text();
+    text += "</td>";
+    text += "<td>";
+    text += ui->winredsquareEdit2->text();
+    text += "</td>";
+    text += "<td><strong>";
+    text += ui->winredsquareEdit3->text();
+    text += "</strong></td>";
+    text += "</tr>";
+
+    text += "<tr>";
+    text += "<td>KnightsQuest</td>";
+    text += "<td>";
+    text += ui->winKnightsQuestEdit1->text();
+    text += "</td>";
+    text += "<td>";
+    text += ui->winKnightsQuestEdit2->text();
+    text += "</td>";
+    text += "<td><strong>";
+    text += ui->winKnightsQuestEdit3->text();
+    text += "</strong></td>";
+    text += "</tr>";
+
+    text += "<tr>";
+    text += "<td><strong>Totals</strong></td>";
+    text += "<td><strong>";
+    text += ui->totalsWindowsEdit1->text();
+    text += "</strong></td>";
+    text += "<td><strong>";
+    text += ui->totalsWindowsEdit2->text();
+    text += "</strong></td>";
+    text += "<td><strong>";
+    text += ui->totalsWindowsEdit3->text();
     text += "</strong></td>";
     text += "</tr>";
 
@@ -323,6 +420,9 @@ void MainWindow::parseVersion(QString response)
 void MainWindow::fetchData() {
 
     // Clear data
+
+    // -- WII MODULES ----
+
     ui->pong2Edit->setText("");
     ui->pong2Edit2->setText("");
     ui->pong2Edit3->setText("");
@@ -348,10 +448,17 @@ void MainWindow::fetchData() {
     ui->towerDefenseEdit3->setText("");
     ui->towerDefenseEdit4->setText("");
 
+    ui->KnightsQuestEdit->setText("");
+    ui->KnightsQuestEdit2->setText("");
+    ui->KnightsQuestEdit3->setText("");
+    ui->KnightsQuestEdit4->setText("");
+
     ui->totals->setText("");
     ui->totals2->setText("");
     ui->totals3->setText("");
     ui->totals4->setText("");
+
+    // -- DRUPAL MODULES ----
 
     ui->addressbookEdit1->setText("");
     ui->addressbookEdit2->setText("");
@@ -368,6 +475,28 @@ void MainWindow::fetchData() {
     ui->totalsDrupalEdit1->setText("");
     ui->totalsDrupalEdit2->setText("");
     ui->totalsDrupalEdit3->setText("");
+
+    // -- WINDOWS MODULES ----
+
+    ui->plaatstatsEdit1->setText("");
+    ui->plaatstatsEdit2->setText("");
+    ui->plaatstatsEdit3->setText("");
+
+    ui->plaatscoreEdit1->setText("");
+    ui->plaatscoreEdit2->setText("");
+    ui->plaatscoreEdit3->setText("");
+
+    ui->winredsquareEdit1->setText("");
+    ui->winredsquareEdit2->setText("");
+    ui->winredsquareEdit3->setText("");
+
+    ui->winKnightsQuestEdit1->setText("");
+    ui->winKnightsQuestEdit2->setText("");
+    ui->winKnightsQuestEdit3->setText("");
+
+    ui->totalsWindowsEdit1->setText("");
+    ui->totalsWindowsEdit2->setText("");
+    ui->totalsWindowsEdit3->setText("");
 
     // Disable button during request.
     ui->actionRefreshData->setEnabled(false);
@@ -478,6 +607,8 @@ void MainWindow::stateMachine() {
       case 1: {
                 bool ok;
 
+                // --- Wii software ---
+
                 // Parse Information
                 int j = result.indexOf("Pong2.zip",0);
                 QString t = result.mid(j,80);
@@ -513,13 +644,26 @@ void MainWindow::stateMachine() {
                 if (tmp.size()==0) tmp="0";
                 qDebug() << "TowerDefense.zip download =" << tmp;
                 ui->towerDefenseEdit->setText(tmp);
+
+                j = result.indexOf("KnightsQuest.zip",0);
+                if (j!=-1) {
+                  t = result.mid(j,80);
+                  tmp = t.mid(t.indexOf("-")+2,5).replace(",",".");
+                  if (tmp.size()==0) tmp="0";
+                } else {
+                  tmp="0";
+                }
+                qDebug() << "KnightsQuest.zip download =" << tmp;
+                ui->KnightsQuestEdit->setText(tmp);
                 
+                // --- Drupal software ---
+
                 int sum=0;
                 j = result.indexOf("addressbook-v4.x.zip",0);
                 t = result.mid(j+20,80);
                 qDebug() << "addressbook-v4.x.zip download =" << tmp;
                 tmp = t.mid(t.indexOf("-")+2,3).replace(",",".");
-                 qDebug() << "addressbook-v4.x.zip download =" << tmp;
+                qDebug() << "addressbook-v4.x.zip download =" << tmp;
                 sum += tmp.toInt(&ok, 10);
 
                 j = result.indexOf("addressbook-v5.x.zip",0);
@@ -559,6 +703,38 @@ void MainWindow::stateMachine() {
                 sum += tmp.toInt(&ok, 10);
 
                 ui->churchEdit1->setText(QString::number(sum));
+
+                 // --- Windows software ---
+
+                j = result.indexOf("PlaatStats.zip",0);
+                t = result.mid(j,80);
+                tmp = t.mid(t.indexOf("-")+2,4).replace(",",".");
+                if (tmp.size()==0) tmp="0";
+                qDebug() << "PlaatStats.zip download =" << tmp;
+                ui->plaatstatsEdit1->setText(tmp);
+
+                j = result.indexOf("PlaatScore.zip",0);
+                t = result.mid(j,80);
+                tmp = t.mid(t.indexOf("-")+2,4).replace(",",".");
+                if (tmp.size()==0) tmp="0";
+                qDebug() << "PlaatScore.zip download =" << tmp;
+                ui->plaatscoreEdit1->setText(tmp);
+
+                j = result.indexOf("RedSquare-Windows.zip",0);
+                t = result.mid(j+20,80);
+                tmp = t.mid(t.indexOf("-")+2,3).replace(",",".");
+                if (tmp.size()==0) tmp="0";
+                qDebug() << "RedSquare-Windows.zip download =" << tmp;
+                ui->winredsquareEdit1->setText(tmp);
+
+                j = result.indexOf("KnightsQuest-Windows.zip",0);
+                t = result.mid(j+20,80);
+                tmp = t.mid(t.indexOf("-")+2,2).replace(",",".");
+                if (tmp.size()==0) tmp="0";
+                qDebug() << "KnightsQuest-Windows.zip download =" << tmp;
+                ui->winKnightsQuestEdit1->setText(tmp);
+
+                // --- Next request software ---
 
                 address = QString("http://www.codemii.com/hbbstats.php");
                 qDebug() << "Fetch " << address;
@@ -616,6 +792,20 @@ void MainWindow::stateMachine() {
                qDebug() << "TowerDefense download =" << tmp;
                ui->towerDefenseEdit2->setText(formatNumber(tmp));
 
+               j = result.indexOf("KnightsQuest",0);
+               if (j!=-1) {
+                  t = result.mid(j+20,120);
+                  k = t.indexOf("<font face='Arial'>");
+                  l = t.indexOf("</font>");
+                  tmp = t.mid(k+19,(l-(k+19)));
+                  if (tmp.size()==0) tmp="0";
+               } else {
+                  tmp="0";
+               }
+               qDebug() << "KnightsQuest download =" << tmp;
+               ui->KnightsQuestEdit2->setText(formatNumber(tmp));
+
+
                address = QString("http://code.google.com/p/pongtwo/downloads/list");
                qDebug() << "Fetch " << address;
                manager->get(QNetworkRequest(address));
@@ -624,6 +814,8 @@ void MainWindow::stateMachine() {
                sm++;
              }
              break;
+
+      // Wii Modules
 
      case 3: {
                // Get Pong2 Google code download
@@ -781,6 +973,39 @@ void MainWindow::stateMachine() {
               qDebug() << "TowerDefense download =" << sum;
               ui->towerDefenseEdit3->setText(formatNumber(sum));
 
+              address = QString("http://code.google.com/p/wii-knightsquest/downloads/list");
+              qDebug() << "Fetch " << address;
+              manager->get(QNetworkRequest(address));
+
+              calculate();
+              sm++;
+            }
+            break;
+
+    case 8: {
+              // Get KnightsQuest Google code download
+              bool ok;
+              int sum=0;
+              int j = result.indexOf("vt col_4",0);
+              QString buffer(result);
+              do {
+                j+=190;
+                qDebug() << "j=" << j;
+                QString t = buffer.mid(j,50);
+                qDebug() << "t=" << t;
+                int k = t.indexOf(">");
+                qDebug() << "k=" << k;
+                QString tmp = t.mid(k+1,8).simplified();
+                sum += tmp.toInt(&ok, 10);
+                qDebug() << "sum =" << sum;
+                buffer = buffer.mid(j);
+                qDebug() << "buffer size =" << buffer.size();
+                j = buffer.indexOf("vt col_4",0);
+              } while (j!=-1);
+
+              qDebug() << "KnightsQuest download =" << sum;
+              ui->KnightsQuestEdit3->setText(formatNumber(sum));
+
               address = QString("http://code.google.com/p/drupal-addressbook/downloads/list");
               qDebug() << "Fetch " << address;
               manager->get(QNetworkRequest(address));
@@ -790,7 +1015,9 @@ void MainWindow::stateMachine() {
             }
             break;
 
-   case 8: {
+   // Drupal Modules
+
+   case 9: {
                 // Get Addressbook Google code download
                 bool ok;
                 int sum=0;
@@ -823,7 +1050,7 @@ void MainWindow::stateMachine() {
               }
               break;
 
-    case 9: {
+    case 10: {
                  // Get EventNofication Google code download
                  bool ok;
                  int sum=0;
@@ -856,7 +1083,7 @@ void MainWindow::stateMachine() {
                }
                break;
 
-    case 10: {
+    case 11: {
                  // Get ChurchAdmin Google code download
                  bool ok;
                  int sum=0;
@@ -880,13 +1107,147 @@ void MainWindow::stateMachine() {
                  qDebug() << "ChurchAdmin download =" << sum;
                  ui->churchEdit2->setText(formatNumber(sum));
 
-                 ui->actionRefreshData->setEnabled(true);
-                 ui->actionCheck_for_update->setEnabled(true);
+                 address = QString("http://code.google.com/p/plaatstats/downloads/list");
+                 qDebug() << "Fetch " << address;
+                 manager->get(QNetworkRequest(address));
 
                  calculate();
                  sm++;
                }
                break;
+
+
+    case 12: {
+                 // Get Windows PlaatStats Google code download
+                 bool ok;
+                 int sum=0;
+                 int j = result.indexOf("vt col_4",0);
+                 QString buffer(result);
+                 do {
+                   j+=190;
+                   qDebug() << "j=" << j;
+                   QString t = buffer.mid(j,50);
+                   qDebug() << "t=" << t;
+                   int k = t.indexOf(">");
+                   qDebug() << "k=" << k;
+                   QString tmp = t.mid(k+1,8).simplified();
+                   sum += tmp.toInt(&ok, 10);
+                   qDebug() << "sum =" << sum;
+                   buffer = buffer.mid(j);
+                   qDebug() << "buffer size =" << buffer.size();
+                   j = buffer.indexOf("vt col_4",0);
+                 } while (j!=-1);
+
+                 qDebug() << "PlaatStats download =" << sum;
+                 ui->plaatstatsEdit2->setText(formatNumber(sum));
+
+                 address = QString("http://code.google.com/p/plaatscore/downloads/list");
+                 qDebug() << "Fetch " << address;
+                 manager->get(QNetworkRequest(address));
+
+                 calculate();
+                 sm++;
+               }
+               break;
+
+    case 13: {
+                 // Get Windows PlaatScore Google code download
+                 bool ok;
+                 int sum=0;
+                 int j = result.indexOf("vt col_4",0);
+                 QString buffer(result);
+                 do {
+                   j+=190;
+                   qDebug() << "j=" << j;
+                   QString t = buffer.mid(j,50);
+                   qDebug() << "t=" << t;
+                   int k = t.indexOf(">");
+                   qDebug() << "k=" << k;
+                   QString tmp = t.mid(k+1,8).simplified();
+                   sum += tmp.toInt(&ok, 10);
+                   qDebug() << "sum =" << sum;
+                   buffer = buffer.mid(j);
+                   qDebug() << "buffer size =" << buffer.size();
+                   j = buffer.indexOf("vt col_4",0);
+                 } while (j!=-1);
+
+                 qDebug() << "PlaatScore download =" << sum;
+                 ui->plaatscoreEdit2->setText(formatNumber(sum));
+
+                 address = QString("http://code.google.com/p/windows-redsquare/downloads/list");
+                 qDebug() << "Fetch " << address;
+                 manager->get(QNetworkRequest(address));
+
+                 calculate();
+                 sm++;
+               }
+               break;
+
+    case 14: {
+                 // Get Windows RedSquare Google code download
+                 bool ok;
+                 int sum=0;
+                 int j = result.indexOf("vt col_4",0);
+                 QString buffer(result);
+                 do {
+                   j+=190;
+                   qDebug() << "j=" << j;
+                   QString t = buffer.mid(j,50);
+                   qDebug() << "t=" << t;
+                   int k = t.indexOf(">");
+                   qDebug() << "k=" << k;
+                   QString tmp = t.mid(k+1,8).simplified();
+                   sum += tmp.toInt(&ok, 10);
+                   qDebug() << "sum =" << sum;
+                   buffer = buffer.mid(j);
+                   qDebug() << "buffer size =" << buffer.size();
+                   j = buffer.indexOf("vt col_4",0);
+                 } while (j!=-1);
+
+                 qDebug() << "RedSquare download =" << sum;
+                 ui->winredsquareEdit2->setText(formatNumber(sum));
+
+                 address = QString("http://code.google.com/p/windows-knightsquest/downloads/list");
+                 qDebug() << "Fetch " << address;
+                 manager->get(QNetworkRequest(address));
+
+                 calculate();
+                 sm++;
+               }
+               break;
+
+    case 15: {
+                 // Get Windows KnightsQuest Google code download
+                 bool ok;
+                 int sum=0;
+                 int j = result.indexOf("vt col_4",0);
+                 QString buffer(result);
+                 do {
+                   j+=190;
+                   qDebug() << "j=" << j;
+                   QString t = buffer.mid(j,50);
+                   qDebug() << "t=" << t;
+                   int k = t.indexOf(">");
+                   qDebug() << "k=" << k;
+                   QString tmp = t.mid(k+1,8).simplified();
+                   sum += tmp.toInt(&ok, 10);
+                   qDebug() << "sum =" << sum;
+                   buffer = buffer.mid(j);
+                   qDebug() << "buffer size =" << buffer.size();
+                   j = buffer.indexOf("vt col_4",0);
+                 } while (j!=-1);
+
+                 qDebug() << "KnightsQuest download =" << sum;
+                 ui->winKnightsQuestEdit2->setText(formatNumber(sum));
+
+                 calculate();
+                 sm++;
+
+                 ui->actionRefreshData->setEnabled(true);
+                 ui->actionCheck_for_update->setEnabled(true);
+               }
+               break;
+
 
         case 20:
             {
@@ -911,6 +1272,10 @@ void MainWindow::calculate()
     calculateDrupalMyWebsite();
     calculateDrupalGoogleCode();
     calculateDrupalTotals();
+
+    calculateWindowsMyWebsite();
+    calculateWindowsGoogleCode();
+    calculateWindowsTotals();
 }
 
 /**
@@ -942,6 +1307,11 @@ void MainWindow::calculateWiiApplTotals()
    b = convert(ui->towerDefenseEdit2->text());
    c = convert(ui->towerDefenseEdit3->text());
    ui->towerDefenseEdit4->setText(formatNumber(a+b+c));
+
+   a = convert(ui->KnightsQuestEdit->text());
+   b = convert(ui->KnightsQuestEdit2->text());
+   c = convert(ui->KnightsQuestEdit3->text());
+   ui->KnightsQuestEdit4->setText(formatNumber(a+b+c));
 }
 
 /**
@@ -954,7 +1324,8 @@ void MainWindow::calculateWiiMyWebsite()
    int c = convert(ui->redSquareEdit->text());
    int d = convert(ui->spaceBubbleEdit->text());
    int e = convert(ui->towerDefenseEdit->text());
-   ui->totals->setText(formatNumber(a+b+c+d+e));
+   int f = convert(ui->KnightsQuestEdit->text());
+   ui->totals->setText(formatNumber(a+b+c+d+e+f));
 }
 
 /**
@@ -967,7 +1338,8 @@ void MainWindow::calculateWiiHomebrewBrowser()
    int c = convert(ui->redSquareEdit2->text());
    int d = convert(ui->spaceBubbleEdit2->text());
    int e = convert(ui->towerDefenseEdit2->text());
-   ui->totals2->setText(formatNumber(a+b+c+d+e));
+   int f = convert(ui->KnightsQuestEdit2->text());
+   ui->totals2->setText(formatNumber(a+b+c+d+e+f));
 }
 
 /**
@@ -980,7 +1352,8 @@ void MainWindow::calculateWiiGoogleCode()
    int c = convert(ui->redSquareEdit3->text());
    int d = convert(ui->spaceBubbleEdit3->text());
    int e = convert(ui->towerDefenseEdit3->text());
-   ui->totals3->setText(formatNumber(a+b+c+d+e));
+   int f = convert(ui->KnightsQuestEdit3->text());
+   ui->totals3->setText(formatNumber(a+b+c+d+e+f));
 }
 
 /**
@@ -994,7 +1367,8 @@ void MainWindow::calculateWiiTotals()
    int c = convert(ui->redSquareEdit4->text());
    int d = convert(ui->spaceBubbleEdit4->text());
    int e = convert(ui->towerDefenseEdit4->text());
-   ui->totals4->setText(formatNumber(a+b+c+d+e));
+   int f = convert(ui->KnightsQuestEdit4->text());
+   ui->totals4->setText(formatNumber(a+b+c+d+e+f));
 }
 
 /**
@@ -1039,6 +1413,56 @@ void MainWindow::calculateDrupalTotals()
    a = convert(ui->totalsDrupalEdit1->text());
    b = convert(ui->totalsDrupalEdit2->text());
    ui->totalsDrupalEdit3->setText(formatNumber(a+b));
+}
+
+/**
+ * Calculate Windows My Website total
+ */
+void MainWindow::calculateWindowsMyWebsite()
+{
+   int a = convert(ui->plaatstatsEdit1->text());
+   int b = convert(ui->plaatscoreEdit1->text());
+   int c = convert(ui->winredsquareEdit1->text());
+   int d = convert(ui->winKnightsQuestEdit1->text());
+   ui->totalsWindowsEdit1->setText(formatNumber(a+b+c+d));
+}
+
+/**
+ * Calculate Windows Google Code total
+ */
+void MainWindow::calculateWindowsGoogleCode()
+{
+   int a = convert(ui->plaatstatsEdit2->text());
+   int b = convert(ui->plaatscoreEdit2->text());
+   int c = convert(ui->winredsquareEdit2->text());
+   int d = convert(ui->winKnightsQuestEdit2->text());
+   ui->totalsWindowsEdit2->setText(formatNumber(a+b+c+d));
+}
+
+/**
+ * Calculate Windows Totals
+ */
+void MainWindow::calculateWindowsTotals()
+{
+   int a = convert(ui->plaatstatsEdit1->text());
+   int b = convert(ui->plaatstatsEdit2->text());
+   ui->plaatstatsEdit3->setText(formatNumber(a+b));
+
+   a = convert(ui->plaatscoreEdit1->text());
+   b = convert(ui->plaatscoreEdit2->text());
+   ui->plaatscoreEdit3->setText(formatNumber(a+b));
+
+   a = convert(ui->winredsquareEdit1->text());
+   b = convert(ui->winredsquareEdit2->text());
+   ui->winredsquareEdit3->setText(formatNumber(a+b));
+
+   a = convert(ui->winKnightsQuestEdit1->text());
+   b = convert(ui->winKnightsQuestEdit2->text());
+   ui->winKnightsQuestEdit3->setText(formatNumber(a+b));
+
+   a = convert(ui->totalsWindowsEdit1->text());
+   b = convert(ui->totalsWindowsEdit2->text());
+   ui->totalsWindowsEdit3->setText(formatNumber(a+b));
 }
 
 /**

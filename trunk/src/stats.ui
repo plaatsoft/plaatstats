@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>368</width>
-    <height>428</height>
+    <height>503</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -30,7 +30,7 @@
       <x>10</x>
       <y>10</y>
       <width>351</width>
-      <height>391</height>
+      <height>461</height>
      </rect>
     </property>
     <property name="currentIndex">
@@ -42,7 +42,7 @@
        <x>0</x>
        <y>0</y>
        <width>351</width>
-       <height>337</height>
+       <height>380</height>
       </rect>
      </property>
      <attribute name="label">
@@ -54,7 +54,7 @@
         <x>0</x>
         <y>0</y>
         <width>81</width>
-        <height>271</height>
+        <height>321</height>
        </rect>
       </property>
       <property name="title">
@@ -190,6 +190,32 @@
         <bool>true</bool>
        </property>
       </widget>
+      <widget class="QLineEdit" name="KnightsQuestEdit">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>290</y>
+         <width>61</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_30">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>270</y>
+         <width>69</width>
+         <height>13</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>KnightsQuest</string>
+       </property>
+      </widget>
      </widget>
      <widget class="QGroupBox" name="groupBox_2">
       <property name="geometry">
@@ -197,7 +223,7 @@
         <x>180</x>
         <y>0</y>
         <width>81</width>
-        <height>271</height>
+        <height>321</height>
        </rect>
       </property>
       <property name="title">
@@ -333,6 +359,32 @@
         <bool>true</bool>
        </property>
       </widget>
+      <widget class="QLineEdit" name="KnightsQuestEdit3">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>290</y>
+         <width>61</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_32">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>270</y>
+         <width>81</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>KnightsQuest</string>
+       </property>
+      </widget>
      </widget>
      <widget class="QGroupBox" name="groupBox_4">
       <property name="geometry">
@@ -340,7 +392,7 @@
         <x>270</x>
         <y>0</y>
         <width>81</width>
-        <height>271</height>
+        <height>321</height>
        </rect>
       </property>
       <property name="title">
@@ -506,14 +558,46 @@
         <bool>true</bool>
        </property>
       </widget>
+      <widget class="QLineEdit" name="KnightsQuestEdit4">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>290</y>
+         <width>61</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_33">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>270</y>
+         <width>71</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>KnightsQuest</string>
+       </property>
+      </widget>
      </widget>
      <widget class="QGroupBox" name="groupBox_5">
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>280</y>
+        <y>330</y>
         <width>351</width>
-        <height>51</height>
+        <height>49</height>
        </rect>
       </property>
       <property name="title">
@@ -602,7 +686,7 @@
         <x>90</x>
         <y>0</y>
         <width>81</width>
-        <height>271</height>
+        <height>321</height>
        </rect>
       </property>
       <property name="title">
@@ -738,6 +822,32 @@
         <bool>true</bool>
        </property>
       </widget>
+      <widget class="QLineEdit" name="KnightsQuestEdit2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>290</y>
+         <width>61</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_31">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>270</y>
+         <width>79</width>
+         <height>13</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>KnightsQuest</string>
+       </property>
+      </widget>
      </widget>
     </widget>
     <widget class="QWidget" name="page_2">
@@ -746,7 +856,7 @@
        <x>0</x>
        <y>0</y>
        <width>351</width>
-       <height>337</height>
+       <height>380</height>
       </rect>
      </property>
      <attribute name="label">
@@ -758,7 +868,7 @@
         <x>0</x>
         <y>0</y>
         <width>110</width>
-        <height>271</height>
+        <height>311</height>
        </rect>
       </property>
       <property name="title">
@@ -847,8 +957,8 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>280</y>
-        <width>339</width>
+        <y>320</y>
+        <width>351</width>
         <height>51</height>
        </rect>
       </property>
@@ -896,8 +1006,8 @@
       <widget class="QLineEdit" name="totalsDrupalEdit3">
        <property name="geometry">
         <rect>
-         <x>243</x>
-         <y>19</y>
+         <x>250</x>
+         <y>20</y>
          <width>87</width>
          <height>20</height>
         </rect>
@@ -919,7 +1029,7 @@
         <x>122</x>
         <y>-1</y>
         <width>105</width>
-        <height>271</height>
+        <height>311</height>
        </rect>
       </property>
       <property name="title">
@@ -1009,8 +1119,8 @@
        <rect>
         <x>238</x>
         <y>0</y>
-        <width>105</width>
-        <height>271</height>
+        <width>111</width>
+        <height>311</height>
        </rect>
       </property>
       <property name="title">
@@ -1107,6 +1217,450 @@
          <weight>75</weight>
          <bold>true</bold>
         </font>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_3">
+     <attribute name="label">
+      <string>Windows Downloads</string>
+     </attribute>
+     <widget class="QGroupBox" name="groupBox_10">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>320</y>
+        <width>351</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Totals</string>
+      </property>
+      <widget class="QLineEdit" name="totalsWindowsEdit1">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>87</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="totalsWindowsEdit2">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>20</y>
+         <width>87</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="totalsWindowsEdit3">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>20</y>
+         <width>87</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_11">
+      <property name="geometry">
+       <rect>
+        <x>122</x>
+        <y>0</y>
+        <width>105</width>
+        <height>311</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Google Code</string>
+      </property>
+      <widget class="QLabel" name="label_35">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>79</width>
+         <height>13</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>PlaatStats</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_36">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>70</y>
+         <width>101</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>PlaatScore</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_37">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>120</y>
+         <width>111</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>RedSquare</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="plaatstatsEdit2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>40</y>
+         <width>84</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="plaatscoreEdit2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>90</y>
+         <width>84</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="winredsquareEdit2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>140</y>
+         <width>83</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="winKnightsQuestEdit2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>190</y>
+         <width>81</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_48">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>170</y>
+         <width>81</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>KnightsQuest</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_12">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>111</width>
+        <height>311</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>PlaatSoft</string>
+      </property>
+      <widget class="QLabel" name="label_38">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>79</width>
+         <height>13</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>PlaatStats</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_40">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>120</y>
+         <width>81</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>RedSquare</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="plaatstatsEdit1">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>40</y>
+         <width>91</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="plaatscoreEdit1">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>90</y>
+         <width>90</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="winredsquareEdit1">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>140</y>
+         <width>88</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_46">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>70</y>
+         <width>91</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>PlaatScore</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_47">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>170</y>
+         <width>81</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>KnightsQuest</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="winKnightsQuestEdit1">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>190</y>
+         <width>88</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_13">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>0</y>
+        <width>111</width>
+        <height>311</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Totals</string>
+      </property>
+      <widget class="QLabel" name="label_43">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>79</width>
+         <height>13</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>PlaatStats</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_44">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>70</y>
+         <width>101</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>PlaatScore</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_45">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>120</y>
+         <width>111</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>RedSquare</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="plaatstatsEdit3">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>40</y>
+         <width>81</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="plaatscoreEdit3">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>90</y>
+         <width>84</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="winredsquareEdit3">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>140</y>
+         <width>83</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_49">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>170</y>
+         <width>81</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>KnightsQuest</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="winKnightsQuestEdit3">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>190</y>
+         <width>81</width>
+         <height>20</height>
+        </rect>
        </property>
        <property name="readOnly">
         <bool>true</bool>

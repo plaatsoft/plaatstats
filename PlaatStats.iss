@@ -6,8 +6,14 @@
 ; All Copyrights Reserved (c) PlaatSoft 2008-2010
 
 [Setup]
+AppPublisher=PlaatSoft
+AppPublisherURL=http://www.plaatsoft.nl
 AppName=PlaatStats
-AppVerName=PlaatSoft Downloads Statistics v0.80
+AppVerName=PlaatSoft Statistics v0.80
+AppVersion=0.80
+AppCopyright=Copyright (C) 2008-2010 PlaatSoft
+
+
 DefaultDirName={pf}\PlaatStats
 DefaultGroupName=PlaatSoft
 UninstallDisplayIcon={app}\Statistics.exe

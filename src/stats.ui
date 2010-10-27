@@ -855,8 +855,8 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>351</width>
-       <height>380</height>
+       <width>100</width>
+       <height>30</height>
       </rect>
      </property>
      <attribute name="label">
@@ -1225,6 +1225,14 @@
      </widget>
     </widget>
     <widget class="QWidget" name="page_3">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>351</width>
+       <height>380</height>
+      </rect>
+     </property>
      <attribute name="label">
       <string>Windows Downloads</string>
      </attribute>
@@ -1414,6 +1422,32 @@
         <string>KnightsQuest</string>
        </property>
       </widget>
+      <widget class="QLineEdit" name="winChatCostCalcEdit2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>240</y>
+         <width>81</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_51">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>220</y>
+         <width>81</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>ChatCostCalc</string>
+       </property>
+      </widget>
      </widget>
      <widget class="QGroupBox" name="groupBox_12">
       <property name="geometry">
@@ -1529,6 +1563,32 @@
        </property>
        <property name="readOnly">
         <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="winChatCostCalcEdit1">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>240</y>
+         <width>88</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_50">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>220</y>
+         <width>81</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>ChatCostCalc</string>
        </property>
       </widget>
      </widget>
@@ -1662,8 +1722,46 @@
          <height>20</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
        <property name="readOnly">
         <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="winChatCostCalcEdit3">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>240</y>
+         <width>81</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_52">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>220</y>
+         <width>81</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>ChatCostCalc</string>
        </property>
       </widget>
      </widget>

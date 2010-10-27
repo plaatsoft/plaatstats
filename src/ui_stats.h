@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'stats.ui'
 **
-** Created: Sat 2. Oct 17:09:28 2010
+** Created: Wed 27. Oct 02:24:13 2010
 **      by: Qt User Interface Compiler version 4.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -136,6 +136,8 @@ public:
     QLineEdit *winredsquareEdit2;
     QLineEdit *winKnightsQuestEdit2;
     QLabel *label_48;
+    QLineEdit *winChatCostCalcEdit2;
+    QLabel *label_51;
     QGroupBox *groupBox_12;
     QLabel *label_38;
     QLabel *label_40;
@@ -145,6 +147,8 @@ public:
     QLabel *label_46;
     QLabel *label_47;
     QLineEdit *winKnightsQuestEdit1;
+    QLineEdit *winChatCostCalcEdit1;
+    QLabel *label_50;
     QGroupBox *groupBox_13;
     QLabel *label_43;
     QLabel *label_44;
@@ -154,6 +158,8 @@ public:
     QLineEdit *winredsquareEdit3;
     QLabel *label_49;
     QLineEdit *winKnightsQuestEdit3;
+    QLineEdit *winChatCostCalcEdit3;
+    QLabel *label_52;
     QMenuBar *menuBar;
     QMenu *menuExit;
     QMenu *menuHelp;
@@ -409,7 +415,7 @@ public:
         toolBox->addItem(page, QString::fromUtf8("Wii Downloads"));
         page_2 = new QWidget();
         page_2->setObjectName(QString::fromUtf8("page_2"));
-        page_2->setGeometry(QRect(0, 0, 351, 380));
+        page_2->setGeometry(QRect(0, 0, 100, 30));
         groupBox_6 = new QGroupBox(page_2);
         groupBox_6->setObjectName(QString::fromUtf8("groupBox_6"));
         groupBox_6->setGeometry(QRect(0, 0, 110, 311));
@@ -506,6 +512,7 @@ public:
         toolBox->addItem(page_2, QString::fromUtf8("Drupal Downloads"));
         page_3 = new QWidget();
         page_3->setObjectName(QString::fromUtf8("page_3"));
+        page_3->setGeometry(QRect(0, 0, 351, 380));
         groupBox_10 = new QGroupBox(page_3);
         groupBox_10->setObjectName(QString::fromUtf8("groupBox_10"));
         groupBox_10->setGeometry(QRect(0, 320, 351, 51));
@@ -555,6 +562,13 @@ public:
         label_48 = new QLabel(groupBox_11);
         label_48->setObjectName(QString::fromUtf8("label_48"));
         label_48->setGeometry(QRect(10, 170, 81, 16));
+        winChatCostCalcEdit2 = new QLineEdit(groupBox_11);
+        winChatCostCalcEdit2->setObjectName(QString::fromUtf8("winChatCostCalcEdit2"));
+        winChatCostCalcEdit2->setGeometry(QRect(10, 240, 81, 20));
+        winChatCostCalcEdit2->setReadOnly(true);
+        label_51 = new QLabel(groupBox_11);
+        label_51->setObjectName(QString::fromUtf8("label_51"));
+        label_51->setGeometry(QRect(10, 220, 81, 16));
         groupBox_12 = new QGroupBox(page_3);
         groupBox_12->setObjectName(QString::fromUtf8("groupBox_12"));
         groupBox_12->setGeometry(QRect(0, 0, 111, 311));
@@ -586,6 +600,13 @@ public:
         winKnightsQuestEdit1->setObjectName(QString::fromUtf8("winKnightsQuestEdit1"));
         winKnightsQuestEdit1->setGeometry(QRect(10, 190, 88, 20));
         winKnightsQuestEdit1->setReadOnly(true);
+        winChatCostCalcEdit1 = new QLineEdit(groupBox_12);
+        winChatCostCalcEdit1->setObjectName(QString::fromUtf8("winChatCostCalcEdit1"));
+        winChatCostCalcEdit1->setGeometry(QRect(10, 240, 88, 20));
+        winChatCostCalcEdit1->setReadOnly(true);
+        label_50 = new QLabel(groupBox_12);
+        label_50->setObjectName(QString::fromUtf8("label_50"));
+        label_50->setGeometry(QRect(10, 220, 81, 16));
         groupBox_13 = new QGroupBox(page_3);
         groupBox_13->setObjectName(QString::fromUtf8("groupBox_13"));
         groupBox_13->setGeometry(QRect(240, 0, 111, 311));
@@ -619,7 +640,16 @@ public:
         winKnightsQuestEdit3 = new QLineEdit(groupBox_13);
         winKnightsQuestEdit3->setObjectName(QString::fromUtf8("winKnightsQuestEdit3"));
         winKnightsQuestEdit3->setGeometry(QRect(10, 190, 81, 20));
+        winKnightsQuestEdit3->setFont(font);
         winKnightsQuestEdit3->setReadOnly(true);
+        winChatCostCalcEdit3 = new QLineEdit(groupBox_13);
+        winChatCostCalcEdit3->setObjectName(QString::fromUtf8("winChatCostCalcEdit3"));
+        winChatCostCalcEdit3->setGeometry(QRect(10, 240, 81, 20));
+        winChatCostCalcEdit3->setFont(font);
+        winChatCostCalcEdit3->setReadOnly(true);
+        label_52 = new QLabel(groupBox_13);
+        label_52->setObjectName(QString::fromUtf8("label_52"));
+        label_52->setGeometry(QRect(10, 220, 81, 16));
         toolBox->addItem(page_3, QString::fromUtf8("Windows Downloads"));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
@@ -742,16 +772,19 @@ public:
         label_36->setText(QApplication::translate("MainWindow", "PlaatScore", 0, QApplication::UnicodeUTF8));
         label_37->setText(QApplication::translate("MainWindow", "RedSquare", 0, QApplication::UnicodeUTF8));
         label_48->setText(QApplication::translate("MainWindow", "KnightsQuest", 0, QApplication::UnicodeUTF8));
+        label_51->setText(QApplication::translate("MainWindow", "ChatCostCalc", 0, QApplication::UnicodeUTF8));
         groupBox_12->setTitle(QApplication::translate("MainWindow", "PlaatSoft", 0, QApplication::UnicodeUTF8));
         label_38->setText(QApplication::translate("MainWindow", "PlaatStats", 0, QApplication::UnicodeUTF8));
         label_40->setText(QApplication::translate("MainWindow", "RedSquare", 0, QApplication::UnicodeUTF8));
         label_46->setText(QApplication::translate("MainWindow", "PlaatScore", 0, QApplication::UnicodeUTF8));
         label_47->setText(QApplication::translate("MainWindow", "KnightsQuest", 0, QApplication::UnicodeUTF8));
+        label_50->setText(QApplication::translate("MainWindow", "ChatCostCalc", 0, QApplication::UnicodeUTF8));
         groupBox_13->setTitle(QApplication::translate("MainWindow", "Totals", 0, QApplication::UnicodeUTF8));
         label_43->setText(QApplication::translate("MainWindow", "PlaatStats", 0, QApplication::UnicodeUTF8));
         label_44->setText(QApplication::translate("MainWindow", "PlaatScore", 0, QApplication::UnicodeUTF8));
         label_45->setText(QApplication::translate("MainWindow", "RedSquare", 0, QApplication::UnicodeUTF8));
         label_49->setText(QApplication::translate("MainWindow", "KnightsQuest", 0, QApplication::UnicodeUTF8));
+        label_52->setText(QApplication::translate("MainWindow", "ChatCostCalc", 0, QApplication::UnicodeUTF8));
         toolBox->setItemText(toolBox->indexOf(page_3), QApplication::translate("MainWindow", "Windows Downloads", 0, QApplication::UnicodeUTF8));
         menuExit->setTitle(QApplication::translate("MainWindow", "File", 0, QApplication::UnicodeUTF8));
         menuHelp->setTitle(QApplication::translate("MainWindow", "Help", 0, QApplication::UnicodeUTF8));

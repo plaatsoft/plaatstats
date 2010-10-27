@@ -29,7 +29,7 @@
 #include "about.h"
 #include "donate.h"
 
-#define VERSION  "0.80"
+#define VERSION  "0.90"
 
 namespace Ui {
     class MainWindow;
@@ -116,6 +116,11 @@ private:
  * - Http proxy support
  *
  * @section ReleaseNotes
+ *
+ *  <b>27-10-2010 Version 0.90</b>
+ *  - Added ChatCostCalc for Windows statistics.
+ *  - Improve "Data to clipboard" functionality.
+ *  - Build PlaatStats with QtCreator v2.0.0
  *
  *  <b>02-10-2010 Version 0.80</b>
  *  - Added KnightQuest game for Nintendo Wii and Windows

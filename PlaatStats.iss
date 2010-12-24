@@ -9,8 +9,8 @@
 AppPublisher=PlaatSoft
 AppPublisherURL=http://www.plaatsoft.nl
 AppName=PlaatStats
-AppVerName=PlaatSoft Statistics v0.90
-AppVersion=0.90
+AppVerName=PlaatSoft Statistics v0.91
+AppVersion=0.91
 AppCopyright=Copyright (C) 2008-2010 PlaatSoft
 
 

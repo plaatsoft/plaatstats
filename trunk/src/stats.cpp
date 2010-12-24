@@ -575,6 +575,30 @@ void MainWindow::fetchVersion() {
     ui->actionCheck_for_update->setEnabled(false);
 }
 
+int MainWindow::parseGoogleCodePage(QString result) {
+
+   bool ok;
+   int sum=0;
+   int j;
+   QString tmp;
+   QString buffer(result);
+
+   do {
+      j = buffer.indexOf("<td class=\"vt col_5\"",0);
+      qDebug() << "j=" << j;
+      tmp = buffer.mid(j,400);
+      //qDebug() << "tmp=" << tmp;
+      tmp = tmp.replace( QRegExp("<[^>]*>"), "" ).trimmed();
+      //qDebug() << "tmp=" << tmp;
+      sum += tmp.left(5).toInt(&ok, 10);
+      qDebug() << "sum=" << sum;
+      buffer = buffer.mid(j+1);
+      //qDebug() << "buffer=" << buffer;
+   } while (j!=-1);
+
+   return sum;
+}
+
 /**
  * StateMachine
  */
@@ -847,27 +871,8 @@ void MainWindow::stateMachine() {
 
      case 3: {
                // Get Pong2 Google code download
-               bool ok;
-               int sum=0;
-               int j = result.indexOf("vt col_4",0);
-               QString buffer(result);
-               do {
-                 j+=190;
-                 qDebug() << "j=" << j;
-                 QString t = buffer.mid(j,50);
-                 qDebug() << "t=" << t;
-                 int k = t.indexOf(">");
-                 qDebug() << "k=" << k;
-                 QString tmp = t.mid(k+1,8).simplified();
-                 sum += tmp.toInt(&ok, 10);
-                 qDebug() << "sum =" << sum;                 
-                 buffer = buffer.mid(j);
-                 qDebug() << "buffer size =" << buffer.size();
-                 j = buffer.indexOf("vt col_4",0);
-               } while (j!=-1);
-
-               qDebug() << "Pong2 download =" << sum;
-               ui->pong2Edit3->setText(formatNumber(sum));
+               qDebug() << "Pong2 download";
+               ui->pong2Edit3->setText(formatNumber(parseGoogleCodePage(result)));
 
                address = QString("http://code.google.com/p/biblequiz/downloads/list");
                qDebug() << "Fetch " << address;
@@ -875,32 +880,13 @@ void MainWindow::stateMachine() {
 
                calculate();
                sm++;
-             }
+             }             
              break;
 
     case 4: {
               // Get BibleQuiz Google code download
-              bool ok;
-              int sum=0;
-              int j = result.indexOf("vt col_4",0);
-              QString buffer(result);
-              do {
-                j+=190;
-                qDebug() << "j=" << j;
-                QString t = buffer.mid(j,50);
-                qDebug() << "t=" << t;
-                int k = t.indexOf(">");
-                qDebug() << "k=" << k;
-                QString tmp = t.mid(k+1,8).simplified();
-                sum += tmp.toInt(&ok, 10);
-                qDebug() << "sum =" << sum;
-                buffer = buffer.mid(j);
-                qDebug() << "buffer size =" << buffer.size();
-                j = buffer.indexOf("vt col_4",0);
-              } while (j!=-1);
-
-              qDebug() << "BibleQuiz download =" << sum;
-              ui->bibleQuizEdit3->setText(formatNumber(sum));
+              qDebug() << "BibleQuiz download";
+              ui->bibleQuizEdit3->setText(formatNumber(parseGoogleCodePage(result)));
 
               address = QString("http://code.google.com/p/redsquare/downloads/list");
               qDebug() << "Fetch " << address;
@@ -913,27 +899,8 @@ void MainWindow::stateMachine() {
 
     case 5: {
               // Get RedSquare Google code download
-              bool ok;
-              int sum=0;
-              int j = result.indexOf("vt col_4",0);
-              QString buffer(result);
-              do {
-                j+=190;
-                qDebug() << "j=" << j;
-                QString t = buffer.mid(j,50);
-                qDebug() << "t=" << t;
-                int k = t.indexOf(">");
-                qDebug() << "k=" << k;
-                QString tmp = t.mid(k+1,8).simplified();
-                sum += tmp.toInt(&ok, 10);
-                qDebug() << "sum =" << sum;
-                buffer = buffer.mid(j);
-                qDebug() << "buffer size =" << buffer.size();
-                j = buffer.indexOf("vt col_4",0);
-              } while (j!=-1);
-
-              qDebug() << "RedSquare download =" << sum;
-              ui->redSquareEdit3->setText(formatNumber(sum));
+              qDebug() << "RedSquare download";
+              ui->redSquareEdit3->setText(formatNumber(parseGoogleCodePage(result)));
 
               address = QString("http://code.google.com/p/spacebubble/downloads/list");
               qDebug() << "Fetch " << address;
@@ -946,27 +913,8 @@ void MainWindow::stateMachine() {
 
     case 6: {
               // Get SpaceBubble Google code download
-              bool ok;
-              int sum=0;
-              int j = result.indexOf("vt col_4",0);
-              QString buffer(result);
-              do {
-                j+=190;
-                qDebug() << "j=" << j;
-                QString t = buffer.mid(j,50);
-                qDebug() << "t=" << t;
-                int k = t.indexOf(">");
-                qDebug() << "k=" << k;
-                QString tmp = t.mid(k+1,8).simplified();
-                sum += tmp.toInt(&ok, 10);
-                qDebug() << "sum =" << sum;
-                buffer = buffer.mid(j);
-                qDebug() << "buffer size =" << buffer.size();
-                j = buffer.indexOf("vt col_4",0);
-              } while (j!=-1);
-
-              qDebug() << "SpaceBubble download =" << sum;
-              ui->spaceBubbleEdit3->setText(formatNumber(sum));
+              qDebug() << "SpaceBubble download";
+              ui->spaceBubbleEdit3->setText(formatNumber(parseGoogleCodePage(result)));
 
               address = QString("http://code.google.com/p/wiitowerdefense/downloads/list");
               qDebug() << "Fetch " << address;
@@ -979,27 +927,8 @@ void MainWindow::stateMachine() {
 
     case 7: {
               // Get TowerDefense Google code download
-              bool ok;
-              int sum=0;
-              int j = result.indexOf("vt col_4",0);
-              QString buffer(result);
-              do {
-                j+=190;
-                qDebug() << "j=" << j;
-                QString t = buffer.mid(j,50);
-                qDebug() << "t=" << t;
-                int k = t.indexOf(">");
-                qDebug() << "k=" << k;
-                QString tmp = t.mid(k+1,8).simplified();
-                sum += tmp.toInt(&ok, 10);
-                qDebug() << "sum =" << sum;
-                buffer = buffer.mid(j);
-                qDebug() << "buffer size =" << buffer.size();
-                j = buffer.indexOf("vt col_4",0);
-              } while (j!=-1);
-
-              qDebug() << "TowerDefense download =" << sum;
-              ui->towerDefenseEdit3->setText(formatNumber(sum));
+              qDebug() << "TowerDefense download";
+              ui->towerDefenseEdit3->setText(formatNumber(parseGoogleCodePage(result)));
 
               address = QString("http://code.google.com/p/wii-knightsquest/downloads/list");
               qDebug() << "Fetch " << address;
@@ -1012,27 +941,8 @@ void MainWindow::stateMachine() {
 
     case 8: {
               // Get KnightsQuest Google code download
-              bool ok;
-              int sum=0;
-              int j = result.indexOf("vt col_4",0);
-              QString buffer(result);
-              do {
-                j+=190;
-                qDebug() << "j=" << j;
-                QString t = buffer.mid(j,50);
-                qDebug() << "t=" << t;
-                int k = t.indexOf(">");
-                qDebug() << "k=" << k;
-                QString tmp = t.mid(k+1,8).simplified();
-                sum += tmp.toInt(&ok, 10);
-                qDebug() << "sum =" << sum;
-                buffer = buffer.mid(j);
-                qDebug() << "buffer size =" << buffer.size();
-                j = buffer.indexOf("vt col_4",0);
-              } while (j!=-1);
-
-              qDebug() << "KnightsQuest download =" << sum;
-              ui->KnightsQuestEdit3->setText(formatNumber(sum));
+              qDebug() << "KnightsQuest download";
+              ui->KnightsQuestEdit3->setText(formatNumber(parseGoogleCodePage(result)));
 
               address = QString("http://code.google.com/p/drupal-addressbook/downloads/list");
               qDebug() << "Fetch " << address;
@@ -1047,27 +957,8 @@ void MainWindow::stateMachine() {
 
    case 9: {
                 // Get Addressbook Google code download
-                bool ok;
-                int sum=0;
-                int j = result.indexOf("vt col_4",0);
-                QString buffer(result);
-                do {
-                  j+=190;
-                  qDebug() << "j=" << j;
-                  QString t = buffer.mid(j,50);
-                  qDebug() << "t=" << t;
-                  int k = t.indexOf(">");
-                  qDebug() << "k=" << k;
-                  QString tmp = t.mid(k+1,8).simplified();
-                  sum += tmp.toInt(&ok, 10);
-                  qDebug() << "sum =" << sum;
-                  buffer = buffer.mid(j);
-                  qDebug() << "buffer size =" << buffer.size();
-                  j = buffer.indexOf("vt col_4",0);
-                } while (j!=-1);
-
-                qDebug() << "Addressbook download =" << sum;
-                ui->addressbookEdit2->setText(formatNumber(sum));
+                qDebug() << "Addressbook download";
+                ui->addressbookEdit2->setText(formatNumber(parseGoogleCodePage(result)));
 
                 address = QString("http://code.google.com/p/drupal-eventnotification/downloads/list");
                 qDebug() << "Fetch " << address;
@@ -1080,27 +971,8 @@ void MainWindow::stateMachine() {
 
     case 10: {
                  // Get EventNofication Google code download
-                 bool ok;
-                 int sum=0;
-                 int j = result.indexOf("vt col_4",0);
-                 QString buffer(result);
-                 do {
-                   j+=190;
-                   qDebug() << "j=" << j;
-                   QString t = buffer.mid(j,50);
-                   qDebug() << "t=" << t;
-                   int k = t.indexOf(">");
-                   qDebug() << "k=" << k;
-                   QString tmp = t.mid(k+1,8).simplified();
-                   sum += tmp.toInt(&ok, 10);
-                   qDebug() << "sum =" << sum;
-                   buffer = buffer.mid(j);
-                   qDebug() << "buffer size =" << buffer.size();
-                   j = buffer.indexOf("vt col_4",0);
-                 } while (j!=-1);
-
-                 qDebug() << "EventNotification download =" << sum;
-                 ui->eventNotificationEdit2->setText(formatNumber(sum));
+                 qDebug() << "EventNotification download" ;
+                 ui->eventNotificationEdit2->setText(formatNumber(parseGoogleCodePage(result)));
 
                  address = QString("http://code.google.com/p/drupal-oostpoort/downloads/list");
                  qDebug() << "Fetch " << address;
@@ -1113,27 +985,8 @@ void MainWindow::stateMachine() {
 
     case 11: {
                  // Get ChurchAdmin Google code download
-                 bool ok;
-                 int sum=0;
-                 int j = result.indexOf("vt col_4",0);
-                 QString buffer(result);
-                 do {
-                   j+=190;
-                   qDebug() << "j=" << j;
-                   QString t = buffer.mid(j,50);
-                   qDebug() << "t=" << t;
-                   int k = t.indexOf(">");
-                   qDebug() << "k=" << k;
-                   QString tmp = t.mid(k+1,8).simplified();
-                   sum += tmp.toInt(&ok, 10);
-                   qDebug() << "sum =" << sum;
-                   buffer = buffer.mid(j);
-                   qDebug() << "buffer size =" << buffer.size();
-                   j = buffer.indexOf("vt col_4",0);
-                 } while (j!=-1);
-
-                 qDebug() << "ChurchAdmin download =" << sum;
-                 ui->churchEdit2->setText(formatNumber(sum));
+                 qDebug() << "ChurchAdmin download ";
+                 ui->churchEdit2->setText(formatNumber(parseGoogleCodePage(result)));
 
                  address = QString("http://code.google.com/p/plaatstats/downloads/list");
                  qDebug() << "Fetch " << address;
@@ -1147,27 +1000,8 @@ void MainWindow::stateMachine() {
 
     case 12: {
                  // Get Windows PlaatStats Google code download
-                 bool ok;
-                 int sum=0;
-                 int j = result.indexOf("vt col_4",0);
-                 QString buffer(result);
-                 do {
-                   j+=190;
-                   qDebug() << "j=" << j;
-                   QString t = buffer.mid(j,50);
-                   qDebug() << "t=" << t;
-                   int k = t.indexOf(">");
-                   qDebug() << "k=" << k;
-                   QString tmp = t.mid(k+1,8).simplified();
-                   sum += tmp.toInt(&ok, 10);
-                   qDebug() << "sum =" << sum;
-                   buffer = buffer.mid(j);
-                   qDebug() << "buffer size =" << buffer.size();
-                   j = buffer.indexOf("vt col_4",0);
-                 } while (j!=-1);
-
-                 qDebug() << "PlaatStats download =" << sum;
-                 ui->plaatstatsEdit2->setText(formatNumber(sum));
+                 qDebug() << "PlaatStats download ";
+                 ui->plaatstatsEdit2->setText(formatNumber(parseGoogleCodePage(result)));
 
                  address = QString("http://code.google.com/p/plaatscore/downloads/list");
                  qDebug() << "Fetch " << address;
@@ -1180,27 +1014,8 @@ void MainWindow::stateMachine() {
 
     case 13: {
                  // Get Windows PlaatScore Google code download
-                 bool ok;
-                 int sum=0;
-                 int j = result.indexOf("vt col_4",0);
-                 QString buffer(result);
-                 do {
-                   j+=190;
-                   qDebug() << "j=" << j;
-                   QString t = buffer.mid(j,50);
-                   qDebug() << "t=" << t;
-                   int k = t.indexOf(">");
-                   qDebug() << "k=" << k;
-                   QString tmp = t.mid(k+1,8).simplified();
-                   sum += tmp.toInt(&ok, 10);
-                   qDebug() << "sum =" << sum;
-                   buffer = buffer.mid(j);
-                   qDebug() << "buffer size =" << buffer.size();
-                   j = buffer.indexOf("vt col_4",0);
-                 } while (j!=-1);
-
-                 qDebug() << "PlaatScore download =" << sum;
-                 ui->plaatscoreEdit2->setText(formatNumber(sum));
+                 qDebug() << "PlaatScore download ";
+                 ui->plaatscoreEdit2->setText(formatNumber(parseGoogleCodePage(result)));
 
                  address = QString("http://code.google.com/p/windows-redsquare/downloads/list");
                  qDebug() << "Fetch " << address;
@@ -1213,27 +1028,8 @@ void MainWindow::stateMachine() {
 
     case 14: {
                  // Get Windows RedSquare Google code download
-                 bool ok;
-                 int sum=0;
-                 int j = result.indexOf("vt col_4",0);
-                 QString buffer(result);
-                 do {
-                   j+=190;
-                   qDebug() << "j=" << j;
-                   QString t = buffer.mid(j,50);
-                   qDebug() << "t=" << t;
-                   int k = t.indexOf(">");
-                   qDebug() << "k=" << k;
-                   QString tmp = t.mid(k+1,8).simplified();
-                   sum += tmp.toInt(&ok, 10);
-                   qDebug() << "sum =" << sum;
-                   buffer = buffer.mid(j);
-                   qDebug() << "buffer size =" << buffer.size();
-                   j = buffer.indexOf("vt col_4",0);
-                 } while (j!=-1);
-
-                 qDebug() << "RedSquare download =" << sum;
-                 ui->winredsquareEdit2->setText(formatNumber(sum));
+                 qDebug() << "RedSquare download " ;
+                 ui->winredsquareEdit2->setText(formatNumber(parseGoogleCodePage(result)));
 
                  address = QString("http://code.google.com/p/windows-knightsquest/downloads/list");
                  qDebug() << "Fetch " << address;
@@ -1246,27 +1042,8 @@ void MainWindow::stateMachine() {
 
     case 15: {
                  // Get Windows KnightsQuest Google code download
-                 bool ok;
-                 int sum=0;
-                 int j = result.indexOf("vt col_4",0);
-                 QString buffer(result);
-                 do {
-                   j+=190;
-                   qDebug() << "j=" << j;
-                   QString t = buffer.mid(j,50);
-                   qDebug() << "t=" << t;
-                   int k = t.indexOf(">");
-                   qDebug() << "k=" << k;
-                   QString tmp = t.mid(k+1,8).simplified();
-                   sum += tmp.toInt(&ok, 10);
-                   qDebug() << "sum =" << sum;
-                   buffer = buffer.mid(j);
-                   qDebug() << "buffer size =" << buffer.size();
-                   j = buffer.indexOf("vt col_4",0);
-                 } while (j!=-1);
-
-                 qDebug() << "KnightsQuest download =" << sum;
-                 ui->winKnightsQuestEdit2->setText(formatNumber(sum));
+                 qDebug() << "KnightsQuest download ";
+                 ui->winKnightsQuestEdit2->setText(formatNumber(parseGoogleCodePage(result)));
 
                  address = QString("http://code.google.com/p/chatcostcalc/downloads/list");
                  qDebug() << "Fetch " << address;
@@ -1279,27 +1056,8 @@ void MainWindow::stateMachine() {
 
     case 16: {
                  // Get Windows ChatCostCalc Google code download
-                 bool ok;
-                 int sum=0;
-                 int j = result.indexOf("vt col_4",0);
-                 QString buffer(result);
-                 do {
-                   j+=190;
-                   qDebug() << "j=" << j;
-                   QString t = buffer.mid(j,50);
-                   qDebug() << "t=" << t;
-                   int k = t.indexOf(">");
-                   qDebug() << "k=" << k;
-                   QString tmp = t.mid(k+1,8).simplified();
-                   sum += tmp.toInt(&ok, 10);
-                   qDebug() << "sum =" << sum;
-                   buffer = buffer.mid(j);
-                   qDebug() << "buffer size =" << buffer.size();
-                   j = buffer.indexOf("vt col_4",0);
-                 } while (j!=-1);
-
-                 qDebug() << "ChatCostCalc download =" << sum;
-                 ui->winChatCostCalcEdit2->setText(formatNumber(sum));
+                 qDebug() << "ChatCostCalc download";
+                 ui->winChatCostCalcEdit2->setText(formatNumber(parseGoogleCodePage(result)));
 
                  calculate();
                  sm++;

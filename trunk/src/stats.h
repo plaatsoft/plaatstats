@@ -29,7 +29,7 @@
 #include "about.h"
 #include "donate.h"
 
-#define VERSION  "0.90"
+#define VERSION  "0.91"
 
 namespace Ui {
     class MainWindow;
@@ -86,6 +86,7 @@ private:
     void readSettings();
     void writeSettings();
     void parseVersion(QString response);
+    int  parseGoogleCodePage(QString result);
 
     Ui::MainWindow *ui;
     QNetworkAccessManager *manager;
@@ -116,6 +117,10 @@ private:
  * - Http proxy support
  *
  * @section ReleaseNotes
+ *
+ *  <b>24-12-2010 Version 0.91</b>
+ *  - Update google code page download analyser.
+ *  - Build PlaatStats with QtCreator v2.0.1
  *
  *  <b>27-10-2010 Version 0.90</b>
  *  - Added ChatCostCalc for Windows statistics.

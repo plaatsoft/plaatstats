@@ -29,7 +29,7 @@
 #include "about.h"
 #include "donate.h"
 
-#define VERSION  "0.91"
+#define VERSION  "0.92"
 
 namespace Ui {
     class MainWindow;
@@ -117,6 +117,11 @@ private:
  * - Http proxy support
  *
  * @section ReleaseNotes
+ *
+ *  <b>23-03-2011 Version 0.92</b>
+ *  - Added Windows WarQuestClient to statistics.
+ *  - Improve html clipboard update.
+ *  - Build PlaatStats with QtCreator v2.0.1
  *
  *  <b>24-12-2010 Version 0.91</b>
  *  - Update google code page download analyser.

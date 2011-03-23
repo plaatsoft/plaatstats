@@ -117,7 +117,7 @@ void MainWindow::fillClipboard()
     text += "</tr>";
 
     text += "<tr>";
-    text += "<td>Wii-Pong2</td>";
+    text += "<td>Pong2</td>";
     text += "<td>";
     text += ui->pong2Edit->text();
     text += "</td>";
@@ -133,7 +133,7 @@ void MainWindow::fillClipboard()
     text += "</tr>";
 
     text += "<tr>";
-    text += "<td>Wii-BibleQuiz</td>";
+    text += "<td>BibleQuiz</td>";
     text += "<td>";
     text += ui->bibleQuizEdit->text();
     text += "</td>";
@@ -149,7 +149,7 @@ void MainWindow::fillClipboard()
     text += "</tr>";
 
     text += "<tr>";
-    text += "<td>Wii-RedSquare</td>";
+    text += "<td>RedSquare</td>";
     text += "<td>";
     text += ui->redSquareEdit->text();
     text += "</td>";
@@ -165,7 +165,7 @@ void MainWindow::fillClipboard()
     text += "</tr>";
 
     text += "<tr>";
-    text += "<td>Wii-SpaceBubble</td>";
+    text += "<td>SpaceBubble</td>";
     text += "<td>";
     text += ui->spaceBubbleEdit->text();
     text += "</td>";
@@ -181,7 +181,7 @@ void MainWindow::fillClipboard()
     text += "</tr>";
 
     text += "<tr>";
-    text += "<td>Wii-TowerDefense</td>";
+    text += "<td>TowerDefense</td>";
     text += "<td>";
     text += ui->towerDefenseEdit->text();
     text += "</td>";
@@ -197,7 +197,7 @@ void MainWindow::fillClipboard()
     text += "</tr>";
 
     text += "<tr>";
-    text += "<td>Wii-KnightsQuest</td>";
+    text += "<td>KnightsQuest</td>";
     text += "<td>";
     text += ui->KnightsQuestEdit->text();
     text += "</td>";
@@ -245,7 +245,7 @@ void MainWindow::fillClipboard()
     text += "</tr>";
 
     text += "<tr>";
-    text += "<td>Drupal-Addressbook</td>";
+    text += "<td>Addressbook</td>";
     text += "<td>";
     text += ui->addressbookEdit1->text();
     text += "</td>";
@@ -258,7 +258,7 @@ void MainWindow::fillClipboard()
     text += "</tr>";
 
     text += "<tr>";
-    text += "<td>Drupal-EventNotification</td>";
+    text += "<td>EventNotification</td>";
     text += "<td>";
     text += ui->eventNotificationEdit1->text();
     text += "</td>";
@@ -271,7 +271,7 @@ void MainWindow::fillClipboard()
     text += "</tr>";
 
     text += "<tr>";
-    text += "<td>Drupal-ChurchAdminstration</td>";
+    text += "<td>ChurchAdminstration</td>";
     text += "<td>";
     text += ui->churchEdit1->text();
     text += "</td>";
@@ -313,7 +313,7 @@ void MainWindow::fillClipboard()
     text += "</tr>";
 
     text += "<tr>";
-    text += "<td>Windows-PlaatStats</td>";
+    text += "<td>PlaatStats</td>";
     text += "<td>";
     text += ui->plaatstatsEdit1->text();
     text += "</td>";
@@ -326,7 +326,7 @@ void MainWindow::fillClipboard()
     text += "</tr>";
 
     text += "<tr>";
-    text += "<td>Windows-PlaatScore</td>";
+    text += "<td>PlaatScore</td>";
     text += "<td>";
     text += ui->plaatscoreEdit1->text();
     text += "</td>";
@@ -339,7 +339,7 @@ void MainWindow::fillClipboard()
     text += "</tr>";
 
     text += "<tr>";
-    text += "<td>Windows-RedSquare</td>";
+    text += "<td>RedSquare</td>";
     text += "<td>";
     text += ui->winredsquareEdit1->text();
     text += "</td>";
@@ -352,7 +352,7 @@ void MainWindow::fillClipboard()
     text += "</tr>";
 
     text += "<tr>";
-    text += "<td>Windows-KnightsQuest</td>";
+    text += "<td>KnightsQuest</td>";
     text += "<td>";
     text += ui->winKnightsQuestEdit1->text();
     text += "</td>";
@@ -365,7 +365,7 @@ void MainWindow::fillClipboard()
     text += "</tr>";
 
     text += "<tr>";
-    text += "<td>Windows-ChatCostCalc</td>";
+    text += "<td>ChatCostCalc</td>";
     text += "<td>";
     text += ui->winChatCostCalcEdit1->text();
     text += "</td>";
@@ -374,6 +374,19 @@ void MainWindow::fillClipboard()
     text += "</td>";
     text += "<td><strong>";
     text += ui->winChatCostCalcEdit3->text();
+    text += "</strong></td>";
+    text += "</tr>";
+
+    text += "<tr>";
+    text += "<td>WarQuestClient</td>";
+    text += "<td>";
+    text += ui->winWarQuestClientEdit1->text();
+    text += "</td>";
+    text += "<td>";
+    text += ui->winWarQuestClientEdit2->text();
+    text += "</td>";
+    text += "<td><strong>";
+    text += ui->winWarQuestClientEdit3->text();
     text += "</strong></td>";
     text += "</tr>";
 
@@ -514,6 +527,10 @@ void MainWindow::fetchData() {
     ui->winChatCostCalcEdit1->setText("");
     ui->winChatCostCalcEdit2->setText("");
     ui->winChatCostCalcEdit3->setText("");
+
+    ui->winWarQuestClientEdit1->setText("");
+    ui->winWarQuestClientEdit2->setText("");
+    ui->winWarQuestClientEdit3->setText("");
 
     ui->totalsWindowsEdit1->setText("");
     ui->totalsWindowsEdit2->setText("");
@@ -785,6 +802,13 @@ void MainWindow::stateMachine() {
                 if (tmp.size()==0) tmp="0";
                 qDebug() << "ChatCostCalc.zip download =" << tmp;
                 ui->winChatCostCalcEdit1->setText(tmp);
+
+                j = result.indexOf("WarQuest.zip",0);
+                t = result.mid(j,80);
+                tmp = t.mid(t.indexOf("-")+2,3).replace(",",".");
+                if (tmp.size()==0) tmp="0";
+                qDebug() << "WarQuest.zip download =" << tmp;
+                ui->winWarQuestClientEdit1->setText(tmp);
 
                 // --- Next request software ---
 
@@ -1059,6 +1083,20 @@ void MainWindow::stateMachine() {
                  qDebug() << "ChatCostCalc download";
                  ui->winChatCostCalcEdit2->setText(formatNumber(parseGoogleCodePage(result)));
 
+                  address = QString("http://code.google.com/p/warquestclient/downloads/list");
+                 qDebug() << "Fetch " << address;
+                 manager->get(QNetworkRequest(address));
+
+                 calculate();
+                 sm++;
+               }
+               break;
+
+      case 17: {
+                 // Get Windows WarQuestClient Google code download
+                 qDebug() << "WarQuestClient download";
+                 ui->winWarQuestClientEdit2->setText(formatNumber(parseGoogleCodePage(result)));
+
                  calculate();
                  sm++;
 
@@ -1243,7 +1281,8 @@ void MainWindow::calculateWindowsMyWebsite()
    int c = convert(ui->winredsquareEdit1->text());
    int d = convert(ui->winKnightsQuestEdit1->text());
    int e = convert(ui->winChatCostCalcEdit1->text());
-   ui->totalsWindowsEdit1->setText(formatNumber(a+b+c+d+e));
+   int f = convert(ui->winWarQuestClientEdit1->text());
+   ui->totalsWindowsEdit1->setText(formatNumber(a+b+c+d+e+f));
 }
 
 /**
@@ -1256,7 +1295,8 @@ void MainWindow::calculateWindowsGoogleCode()
    int c = convert(ui->winredsquareEdit2->text());
    int d = convert(ui->winKnightsQuestEdit2->text());
    int e = convert(ui->winChatCostCalcEdit2->text());
-   ui->totalsWindowsEdit2->setText(formatNumber(a+b+c+d+e));
+   int f = convert(ui->winWarQuestClientEdit2->text());
+   ui->totalsWindowsEdit2->setText(formatNumber(a+b+c+d+e+f));
 }
 
 /**
@@ -1283,6 +1323,10 @@ void MainWindow::calculateWindowsTotals()
    a = convert(ui->winChatCostCalcEdit1->text());
    b = convert(ui->winChatCostCalcEdit2->text());
    ui->winChatCostCalcEdit3->setText(formatNumber(a+b));
+
+   a = convert(ui->winWarQuestClientEdit1->text());
+   b = convert(ui->winWarQuestClientEdit2->text());
+   ui->winWarQuestClientEdit3->setText(formatNumber(a+b));
 
    a = convert(ui->totalsWindowsEdit1->text());
    b = convert(ui->totalsWindowsEdit2->text());

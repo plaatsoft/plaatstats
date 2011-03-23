@@ -855,8 +855,8 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>100</width>
-       <height>30</height>
+       <width>351</width>
+       <height>380</height>
       </rect>
      </property>
      <attribute name="label">
@@ -1240,7 +1240,7 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>320</y>
+        <y>323</y>
         <width>351</width>
         <height>51</height>
        </rect>
@@ -1312,7 +1312,7 @@
         <x>122</x>
         <y>0</y>
         <width>105</width>
-        <height>311</height>
+        <height>321</height>
        </rect>
       </property>
       <property name="title">
@@ -1448,6 +1448,32 @@
         <string>ChatCostCalc</string>
        </property>
       </widget>
+      <widget class="QLineEdit" name="winWarQuestClientEdit2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>290</y>
+         <width>81</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_54">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>270</y>
+         <width>81</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>WarQuestClient</string>
+       </property>
+      </widget>
      </widget>
      <widget class="QGroupBox" name="groupBox_12">
       <property name="geometry">
@@ -1455,7 +1481,7 @@
         <x>0</x>
         <y>0</y>
         <width>111</width>
-        <height>311</height>
+        <height>321</height>
        </rect>
       </property>
       <property name="title">
@@ -1591,6 +1617,32 @@
         <string>ChatCostCalc</string>
        </property>
       </widget>
+      <widget class="QLabel" name="label_53">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>270</y>
+         <width>81</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>WarQuestClient</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="winWarQuestClientEdit1">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>290</y>
+         <width>88</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
      </widget>
      <widget class="QGroupBox" name="groupBox_13">
       <property name="geometry">
@@ -1598,7 +1650,7 @@
         <x>240</x>
         <y>0</y>
         <width>111</width>
-        <height>311</height>
+        <height>321</height>
        </rect>
       </property>
       <property name="title">
@@ -1762,6 +1814,38 @@
        </property>
        <property name="text">
         <string>ChatCostCalc</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="winWarQuestClientEdit3">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>290</y>
+         <width>81</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_55">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>270</y>
+         <width>81</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>WarQuestClient</string>
        </property>
       </widget>
      </widget>

@@ -1,0 +1,12 @@
+INPUT(
+./release/main.o
+./release/stats.o
+./release/settings.o
+./release/about.o
+./release/donate.o
+./release/moc_stats.o
+./release/moc_settings.o
+./release/moc_about.o
+./release/moc_donate.o
+./release/qrc_resource.o
+);

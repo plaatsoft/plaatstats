@@ -29,7 +29,7 @@
 #include "about.h"
 #include "donate.h"
 
-#define VERSION  "0.92"
+#define VERSION  "0.93"
 
 namespace Ui {
     class MainWindow;
@@ -118,9 +118,14 @@ private:
  *
  * @section ReleaseNotes
  *
+ *  <b>(No release yet) Version 0.93</b>
+ *  - Enlarge Windows RedSquare counter size.
+ *  - Upgrade QT library to 4.7.2
+ *  - Build PlaatStats with QtCreator v2.0.1
+ *
  *  <b>23-03-2011 Version 0.92</b>
  *  - Added Windows WarQuestClient to statistics.
- *  - Improve html clipboard update.
+ *  - Enlarge Windows RedSquare counter
  *  - Build PlaatStats with QtCreator v2.0.1
  *
  *  <b>24-12-2010 Version 0.91</b>

@@ -784,7 +784,7 @@ void MainWindow::stateMachine() {
 
                 j = result.indexOf("RedSquare-Windows.zip",0);
                 t = result.mid(j+20,80);
-                tmp = t.mid(t.indexOf("-")+2,3).replace(",",".");
+                tmp = t.mid(t.indexOf("-")+2,5).replace(",",".");
                 if (tmp.size()==0) tmp="0";
                 qDebug() << "RedSquare-Windows.zip download =" << tmp;
                 ui->winredsquareEdit1->setText(tmp);

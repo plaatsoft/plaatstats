@@ -118,10 +118,11 @@ private:
  *
  * @section ReleaseNotes
  *
- *  <b>(No release yet) Version 0.93</b>
- *  - Enlarge Windows RedSquare counter size.
- *  - Upgrade QT library to 4.7.2
- *  - Build PlaatStats with QtCreator v2.0.1
+ *  <b>06-09-2011 Version 0.93</b>
+ *  - BugFix: Enlarge Windows RedSquare counter size.
+ *  - Maintenance release.
+ *  - Use QT library 4.7.4 as engine.
+ *  - Build PlaatStats with QtCreator v2.3.0
  *
  *  <b>23-03-2011 Version 0.92</b>
  *  - Added Windows WarQuestClient to statistics.

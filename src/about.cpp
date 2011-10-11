@@ -3,7 +3,7 @@
  *  @brief The file contain the about window
  *  @author wplaat
  *
- *  Copyright (C) 2008-2010 PlaatSoft
+ *  Copyright (C) 2008-2011 PlaatSoft
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -43,6 +43,10 @@ About::About(QWidget *parent) : QWidget(parent), ui(new Ui::About)
     // Set fix windows form size.
     setMinimumSize(540,220);
     setMaximumSize(540,220);
+
+    QString tmp = "Qt Version ";
+    tmp.append(qVersion());
+    ui->versionLabel->setText( tmp );
 
     setWindowTitle("About");
 }

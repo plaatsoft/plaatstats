@@ -1471,7 +1471,7 @@
         </rect>
        </property>
        <property name="text">
-        <string>WarQuestClient</string>
+        <string>WarQuest</string>
        </property>
       </widget>
      </widget>
@@ -1627,7 +1627,7 @@
         </rect>
        </property>
        <property name="text">
-        <string>WarQuestClient</string>
+        <string>WarQuest</string>
        </property>
       </widget>
       <widget class="QLineEdit" name="winWarQuestClientEdit1">
@@ -1845,7 +1845,7 @@
         </rect>
        </property>
        <property name="text">
-        <string>WarQuestClient</string>
+        <string>WarQuest</string>
        </property>
       </widget>
      </widget>
@@ -1858,7 +1858,7 @@
      <x>0</x>
      <y>0</y>
      <width>368</width>
-     <height>20</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuExit">

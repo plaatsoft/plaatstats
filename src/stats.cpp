@@ -3,7 +3,7 @@
  *  @brief The file contain the PlaatSoft Download Statistics tool
  *  @author wplaat
  *
- *  Copyright (C) 2008-2010 PlaatSoft
+ *  Copyright (C) 2008-2011 PlaatSoft
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -339,32 +339,6 @@ void MainWindow::fillClipboard()
     text += "</tr>";
 
     text += "<tr>";
-    text += "<td>RedSquare</td>";
-    text += "<td>";
-    text += ui->winredsquareEdit1->text();
-    text += "</td>";
-    text += "<td>";
-    text += ui->winredsquareEdit2->text();
-    text += "</td>";
-    text += "<td><strong>";
-    text += ui->winredsquareEdit3->text();
-    text += "</strong></td>";
-    text += "</tr>";
-
-    text += "<tr>";
-    text += "<td>KnightsQuest</td>";
-    text += "<td>";
-    text += ui->winKnightsQuestEdit1->text();
-    text += "</td>";
-    text += "<td>";
-    text += ui->winKnightsQuestEdit2->text();
-    text += "</td>";
-    text += "<td><strong>";
-    text += ui->winKnightsQuestEdit3->text();
-    text += "</strong></td>";
-    text += "</tr>";
-
-    text += "<tr>";
     text += "<td>ChatCostCalc</td>";
     text += "<td>";
     text += ui->winChatCostCalcEdit1->text();
@@ -378,7 +352,20 @@ void MainWindow::fillClipboard()
     text += "</tr>";
 
     text += "<tr>";
-    text += "<td>WarQuestClient</td>";
+    text += "<td>RedSquare</td>";
+    text += "<td>";
+    text += ui->winredsquareEdit1->text();
+    text += "</td>";
+    text += "<td>";
+    text += ui->winredsquareEdit2->text();
+    text += "</td>";
+    text += "<td><strong>";
+    text += ui->winredsquareEdit3->text();
+    text += "</strong></td>";
+    text += "</tr>";
+
+    text += "<tr>";
+    text += "<td>WarQuest</td>";
     text += "<td>";
     text += ui->winWarQuestClientEdit1->text();
     text += "</td>";
@@ -387,6 +374,19 @@ void MainWindow::fillClipboard()
     text += "</td>";
     text += "<td><strong>";
     text += ui->winWarQuestClientEdit3->text();
+    text += "</strong></td>";
+    text += "</tr>";
+
+    text += "<tr>";
+    text += "<td>KnightsQuest</td>";
+    text += "<td>";
+    text += ui->winKnightsQuestEdit1->text();
+    text += "</td>";
+    text += "<td>";
+    text += ui->winKnightsQuestEdit2->text();
+    text += "</td>";
+    text += "<td><strong>";
+    text += ui->winKnightsQuestEdit3->text();
     text += "</strong></td>";
     text += "</tr>";
 
@@ -805,7 +805,7 @@ void MainWindow::stateMachine() {
 
                 j = result.indexOf("WarQuest.zip",0);
                 t = result.mid(j,80);
-                tmp = t.mid(t.indexOf("-")+2,3).replace(",",".");
+                tmp = t.mid(t.indexOf("-")+2,5).replace(",",".");
                 if (tmp.size()==0) tmp="0";
                 qDebug() << "WarQuest.zip download =" << tmp;
                 ui->winWarQuestClientEdit1->setText(tmp);

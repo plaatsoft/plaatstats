@@ -3,7 +3,7 @@
  *  @brief The file contain the statistics windows
  *  @author wplaat
  *
- *  Copyright (C) 2008-2010 PlaatSoft
+ *  Copyright (C) 2008-2011 PlaatSoft
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@
 #include "about.h"
 #include "donate.h"
 
-#define VERSION  "0.93"
+#define VERSION  "1.0"
 
 namespace Ui {
     class MainWindow;
@@ -118,32 +118,26 @@ private:
  *
  * @section ReleaseNotes
  *
- *  <b>06-09-2011 Version 0.93</b>
+ *  <b>11-10-2011 Version 1.0</b>
  *  - BugFix: Enlarge Windows RedSquare counter size.
- *  - Maintenance release.
+ *  - Added QT version number on about window.
  *  - Use QT library 4.7.4 as engine.
- *  - Build PlaatStats with QtCreator v2.3.0
+ *  - PlaatStats is build with QtCreator v2.3.0
  *
- *  <b>23-03-2011 Version 0.92</b>
- *  - Added Windows WarQuestClient to statistics.
- *  - Enlarge Windows RedSquare counter
- *  - Build PlaatStats with QtCreator v2.0.1
- *
- *  <b>24-12-2010 Version 0.91</b>
- *  - Update google code page download analyser.
- *  - Build PlaatStats with QtCreator v2.0.1
- *
- *  <b>27-10-2010 Version 0.90</b>
+ *  <b>23-03-2011 Version 0.90</b>
+ *  - Added WarQuest for Windows statistics.
  *  - Added ChatCostCalc for Windows statistics.
+ *  - Enlarge Windows RedSquare counter
+ *  - Update google code page download analyser.
  *  - Improve "Data to clipboard" functionality.
- *  - Build PlaatStats with QtCreator v2.0.0
+ *  - PlaatStats is build with QtCreator v2.0.0
  *
  *  <b>02-10-2010 Version 0.80</b>
  *  - Added KnightQuest game for Nintendo Wii and Windows
  *  - Added in clipboard export Windows tools and games.
  *  - Maintenance Release.
- *  - Added Qt 4.7.0
- *  - Build PlaatStats with QtCreator v2.0.0
+ *  - Use Qt library 4.7.0 as engine.
+ *  - PlaatStats is build with QtCreator v2.0.0
  *
  *  <b>14-05-2010 Version 0.70</b>
  *  - Disable main window when sub window is opened.
@@ -151,7 +145,7 @@ private:
  *  - Added donate window.
  *  - Added Drupal Google Code downloads to statistics.
  *  - Bugfix: Drupal ChurchAdmin module is now also counted.
- *  - Build PlaatStats with QtCreator v1.3.1.
+ *  - PlaatStats is build with QtCreator v1.3.1.
  *
  *  <b>29-03-2010 Version 0.60</b>
  *  - Rename registry key names.
@@ -160,27 +154,27 @@ private:
  *  - Added settings window.
  *  - Added support for http proxy.
  *  - Added new version check.
- *  - Build PlaatStats with QtCreator v1.3.1.
+ *  - PlaatStats is build with QtCreator v1.3.1.
  *
  *  <b>21-03-2010 Version 0.50</b>
  *  - Improve number layout (dot notation after 3 digits).
  *  - Add Windows setup file.
  *  - Add source code to Google Code
- *  - Build PlaatStats with QtCreator v1.3.1.
+ *  - PlaatStats is build with QtCreator v1.3.1.
  *
  *  <b>18-03-2010 Version 0.40</b>
  *  - Change GUI layout.
  *  - Added Drupal downloads.
  *  - Added application icon.
  *  - Refactor file names.
- *  - Build with QtCreator v1.3.1
+ *  - PlaatStats is build with QtCreator v1.3.1
  *
  *  <b>17-03-2010 Version 0.30</b>
  *  - First release for Homebrew Scene.
  *  - Cleanup code.
  *  - If internet is down show 0 values in boxes.
  *  - Move clipboard functionality to Menu action.
- *  - Build with QtCreator v1.3.1
+ *  - PlaatStats is build with QtCreator v1.3.1
  *
  *  <b>16-03-2010 Version 0.20</b>
  *  - Added fix window size.
@@ -189,12 +183,12 @@ private:
  *  - Fetch data from Google Code sites.
  *  - When application is started, information is directly fetched.
  *  - Add windows clipboard support (HTML output is added)
- *  - Build with QtCreator v1.3.1
+ *  - PlaatStats is build with QtCreator v1.3.1
  *
  *  <b>14-03-2010 Version 0.10</b>
  *  - Start building.
  *  - Created GUI.
  *  - Added network call (Plaatsoft and CodeMii website)
  *  - Added stateMachine.
- *  - Build with QtCreator v1.3.1
+ *  - PlaatStats is build with QtCreator v1.3.1
  */

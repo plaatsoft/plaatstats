@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'stats.ui'
 **
-** Created: Tue 6. Sep 16:05:40 2011
+** Created: Tue 11. Oct 08:13:25 2011
 **      by: Qt User Interface Compiler version 4.7.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -682,7 +682,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 368, 20));
+        menuBar->setGeometry(QRect(0, 0, 368, 21));
         menuExit = new QMenu(menuBar);
         menuExit->setObjectName(QString::fromUtf8("menuExit"));
         menuHelp = new QMenu(menuBar);
@@ -801,21 +801,21 @@ public:
         label_37->setText(QApplication::translate("MainWindow", "RedSquare", 0, QApplication::UnicodeUTF8));
         label_48->setText(QApplication::translate("MainWindow", "KnightsQuest", 0, QApplication::UnicodeUTF8));
         label_51->setText(QApplication::translate("MainWindow", "ChatCostCalc", 0, QApplication::UnicodeUTF8));
-        label_54->setText(QApplication::translate("MainWindow", "WarQuestClient", 0, QApplication::UnicodeUTF8));
+        label_54->setText(QApplication::translate("MainWindow", "WarQuest", 0, QApplication::UnicodeUTF8));
         groupBox_12->setTitle(QApplication::translate("MainWindow", "PlaatSoft", 0, QApplication::UnicodeUTF8));
         label_38->setText(QApplication::translate("MainWindow", "PlaatStats", 0, QApplication::UnicodeUTF8));
         label_40->setText(QApplication::translate("MainWindow", "RedSquare", 0, QApplication::UnicodeUTF8));
         label_46->setText(QApplication::translate("MainWindow", "PlaatScore", 0, QApplication::UnicodeUTF8));
         label_47->setText(QApplication::translate("MainWindow", "KnightsQuest", 0, QApplication::UnicodeUTF8));
         label_50->setText(QApplication::translate("MainWindow", "ChatCostCalc", 0, QApplication::UnicodeUTF8));
-        label_53->setText(QApplication::translate("MainWindow", "WarQuestClient", 0, QApplication::UnicodeUTF8));
+        label_53->setText(QApplication::translate("MainWindow", "WarQuest", 0, QApplication::UnicodeUTF8));
         groupBox_13->setTitle(QApplication::translate("MainWindow", "Totals", 0, QApplication::UnicodeUTF8));
         label_43->setText(QApplication::translate("MainWindow", "PlaatStats", 0, QApplication::UnicodeUTF8));
         label_44->setText(QApplication::translate("MainWindow", "PlaatScore", 0, QApplication::UnicodeUTF8));
         label_45->setText(QApplication::translate("MainWindow", "RedSquare", 0, QApplication::UnicodeUTF8));
         label_49->setText(QApplication::translate("MainWindow", "KnightsQuest", 0, QApplication::UnicodeUTF8));
         label_52->setText(QApplication::translate("MainWindow", "ChatCostCalc", 0, QApplication::UnicodeUTF8));
-        label_55->setText(QApplication::translate("MainWindow", "WarQuestClient", 0, QApplication::UnicodeUTF8));
+        label_55->setText(QApplication::translate("MainWindow", "WarQuest", 0, QApplication::UnicodeUTF8));
         toolBox->setItemText(toolBox->indexOf(page_3), QApplication::translate("MainWindow", "Windows Downloads", 0, QApplication::UnicodeUTF8));
         menuExit->setTitle(QApplication::translate("MainWindow", "File", 0, QApplication::UnicodeUTF8));
         menuHelp->setTitle(QApplication::translate("MainWindow", "Help", 0, QApplication::UnicodeUTF8));

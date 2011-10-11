@@ -3,7 +3,7 @@
  *  @brief The file contain the donate window
  *  @author wplaat
  *
- *  Copyright (C) 2008-2010 PlaatSoft
+ *  Copyright (C) 2008-2011 PlaatSoft
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by

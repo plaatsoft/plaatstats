@@ -339,19 +339,6 @@ void MainWindow::fillClipboard()
     text += "</tr>";
 
     text += "<tr>";
-    text += "<td>ChatCostCalc</td>";
-    text += "<td>";
-    text += ui->winChatCostCalcEdit1->text();
-    text += "</td>";
-    text += "<td>";
-    text += ui->winChatCostCalcEdit2->text();
-    text += "</td>";
-    text += "<td><strong>";
-    text += ui->winChatCostCalcEdit3->text();
-    text += "</strong></td>";
-    text += "</tr>";
-
-    text += "<tr>";
     text += "<td>RedSquare</td>";
     text += "<td>";
     text += ui->winredsquareEdit1->text();
@@ -361,6 +348,32 @@ void MainWindow::fillClipboard()
     text += "</td>";
     text += "<td><strong>";
     text += ui->winredsquareEdit3->text();
+    text += "</strong></td>";
+    text += "</tr>";
+
+    text += "<tr>";
+    text += "<td>KnightsQuest</td>";
+    text += "<td>";
+    text += ui->winKnightsQuestEdit1->text();
+    text += "</td>";
+    text += "<td>";
+    text += ui->winKnightsQuestEdit2->text();
+    text += "</td>";
+    text += "<td><strong>";
+    text += ui->winKnightsQuestEdit3->text();
+    text += "</strong></td>";
+    text += "</tr>";
+
+    text += "<tr>";
+    text += "<td>ChatCostCalc</td>";
+    text += "<td>";
+    text += ui->winChatCostCalcEdit1->text();
+    text += "</td>";
+    text += "<td>";
+    text += ui->winChatCostCalcEdit2->text();
+    text += "</td>";
+    text += "<td><strong>";
+    text += ui->winChatCostCalcEdit3->text();
     text += "</strong></td>";
     text += "</tr>";
 
@@ -377,18 +390,7 @@ void MainWindow::fillClipboard()
     text += "</strong></td>";
     text += "</tr>";
 
-    text += "<tr>";
-    text += "<td>KnightsQuest</td>";
-    text += "<td>";
-    text += ui->winKnightsQuestEdit1->text();
-    text += "</td>";
-    text += "<td>";
-    text += ui->winKnightsQuestEdit2->text();
-    text += "</td>";
-    text += "<td><strong>";
-    text += ui->winKnightsQuestEdit3->text();
-    text += "</strong></td>";
-    text += "</tr>";
+
 
     text += "<tr>";
     text += "<td><strong>Totals</strong></td>";
@@ -791,7 +793,7 @@ void MainWindow::stateMachine() {
 
                 j = result.indexOf("KnightsQuest-Windows.zip",0);
                 t = result.mid(j+20,80);
-                tmp = t.mid(t.indexOf("-")+2,2).replace(",",".");
+                tmp = t.mid(t.indexOf("-")+2,4).replace(",",".");
                 if (tmp.size()==0) tmp="0";
                 qDebug() << "KnightsQuest-Windows.zip download =" << tmp;
                 ui->winKnightsQuestEdit1->setText(tmp);

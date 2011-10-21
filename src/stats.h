@@ -118,6 +118,11 @@ private:
  *
  * @section ReleaseNotes
  *
+ *  <b>21-10-2011 Version 1.0b (Not released)</b>
+ *  - Bugfix: KnightsQuest Windows data fetching corrected!
+ *  - Use QT library 4.7.4 as engine.
+ *  - PlaatStats is build with QtCreator v2.3.0
+ *
  *  <b>11-10-2011 Version 1.0</b>
  *  - BugFix: Enlarge Windows RedSquare counter size.
  *  - Added QT version number on about window.

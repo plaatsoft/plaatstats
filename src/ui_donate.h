@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'donate.ui'
 **
-** Created: Tue 6. Sep 16:05:40 2011
-**      by: Qt User Interface Compiler version 4.7.4
+** Created: Tue 10. Jul 08:30:00 2012
+**      by: Qt User Interface Compiler version 4.8.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/

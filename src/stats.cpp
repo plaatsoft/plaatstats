@@ -3,7 +3,7 @@
  *  @brief The file contain the PlaatSoft Download Statistics tool
  *  @author wplaat
  *
- *  Copyright (C) 2008-2011 PlaatSoft
+ *  Copyright (C) 2008-2012 PlaatSoft
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -661,7 +661,7 @@ void MainWindow::stateMachine() {
     switch (sm)
     {
       case 0: {
-                address = QString("http://www.plaatsoft.nl/wiibrew/statistics/");
+                address = QString("http://www.plaatsoft.nl/statistics/");
                 qDebug() << "Fetch " << address;
                 manager->get(QNetworkRequest(address));
                 sm++;
@@ -772,7 +772,7 @@ void MainWindow::stateMachine() {
 
                 j = result.indexOf("PlaatStats.zip",0);
                 t = result.mid(j,80);
-                tmp = t.mid(t.indexOf("-")+2,4).replace(",",".");
+                tmp = t.mid(t.indexOf("-")+2,5).replace(",",".");
                 if (tmp.size()==0) tmp="0";
                 qDebug() << "PlaatStats.zip download =" << tmp;
                 ui->plaatstatsEdit1->setText(tmp);
@@ -1085,7 +1085,7 @@ void MainWindow::stateMachine() {
                  qDebug() << "ChatCostCalc download";
                  ui->winChatCostCalcEdit2->setText(formatNumber(parseGoogleCodePage(result)));
 
-                  address = QString("http://code.google.com/p/warquestclient/downloads/list");
+                  address = QString("http://code.google.com/p/warquest/downloads/list");
                  qDebug() << "Fetch " << address;
                  manager->get(QNetworkRequest(address));
 
@@ -1095,8 +1095,8 @@ void MainWindow::stateMachine() {
                break;
 
       case 17: {
-                 // Get Windows WarQuestClient Google code download
-                 qDebug() << "WarQuestClient download";
+                 // Get Windows WarQuest Google code download
+                 qDebug() << "WarQuest download";
                  ui->winWarQuestClientEdit2->setText(formatNumber(parseGoogleCodePage(result)));
 
                  calculate();

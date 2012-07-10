@@ -3,15 +3,15 @@
 ;
 ; The file can be processed with "Inno Setup Compiler v5.3.8"
 ;
-; All Copyrights Reserved (c) PlaatSoft 2008-2011
+; All Copyrights Reserved (c) PlaatSoft 2008-2012
 
 [Setup]
 AppPublisher=PlaatSoft
 AppPublisherURL=http://www.plaatsoft.nl
 AppName=PlaatStats
-AppVerName=PlaatSoft Statistics v1.0
-AppVersion=1.0
-AppCopyright=Copyright (C) 2008-2011 PlaatSoft
+AppVerName=PlaatSoft Statistics v1.1
+AppVersion=1.1
+AppCopyright=Copyright (C) 2008-2012 PlaatSoft
 
 
 DefaultDirName={pf}\PlaatStats

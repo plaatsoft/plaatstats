@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'about.ui'
 **
-** Created: Tue 11. Oct 09:02:06 2011
-**      by: Qt User Interface Compiler version 4.7.4
+** Created: Tue 10. Jul 08:30:00 2012
+**      by: Qt User Interface Compiler version 4.8.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -61,7 +61,7 @@ public:
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt; font-weight:600;\">PlaatSoft Statistics</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">Version 1.0 (Build 11-10-2011)</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">Version 1.1 (Build 09-07-2012)</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt;\">          </span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-ind"
                         "ent:0; text-indent:0px;\"><span style=\" font-size:8pt;\">Created by </span><span style=\" font-size:8pt; font-style:italic;\">wplaat</span></p>\n"
@@ -71,7 +71,7 @@ public:
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt;\">in a nice way.</span></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:"
                         "0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt;\">All copyrights reserved (c) </span><a href=\"http://www.plaatsoft.nl\"><span style=\" font-size:8pt; text-decoration: underline; color:#0000ff;\">PlaatSoft </span></a><span style=\" font-size:8pt;\">2008-2011</span></p></body></html>", 0, QApplication::UnicodeUTF8));
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt;\">All copyrights reserved (c) </span><a href=\"http://www.plaatsoft.nl\"><span style=\" font-size:8pt; text-decoration: underline; color:#0000ff;\">PlaatSoft </span></a><span style=\" font-size:8pt;\">2008-2012</span></p></body></html>", 0, QApplication::UnicodeUTF8));
         pushButton->setText(QApplication::translate("About", "Ok", 0, QApplication::UnicodeUTF8));
         versionLabel->setText(QApplication::translate("About", "TextLabel", 0, QApplication::UnicodeUTF8));
     } // retranslateUi

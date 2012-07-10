@@ -3,7 +3,7 @@
  *  @brief The file contain the statistics windows
  *  @author wplaat
  *
- *  Copyright (C) 2008-2011 PlaatSoft
+ *  Copyright (C) 2008-2012 PlaatSoft
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@
 #include "about.h"
 #include "donate.h"
 
-#define VERSION  "1.0"
+#define VERSION  "1.1"
 
 namespace Ui {
     class MainWindow;
@@ -118,10 +118,11 @@ private:
  *
  * @section ReleaseNotes
  *
- *  <b>21-10-2011 Version 1.0b (Not released)</b>
- *  - Bugfix: KnightsQuest Windows data fetching corrected!
- *  - Use QT library 4.7.4 as engine.
- *  - PlaatStats is build with QtCreator v2.3.0
+ *  <b>09-07-2012 Version 1.1</b>
+ *  - Correct www.plaatsoft.nl url
+ *  - KnightsQuest Windows data fetching corrected!
+ *  - Use QT library 4.8.0 as engine.
+ *  - PlaatStats is build with QtCreator v2.4.1
  *
  *  <b>11-10-2011 Version 1.0</b>
  *  - BugFix: Enlarge Windows RedSquare counter size.

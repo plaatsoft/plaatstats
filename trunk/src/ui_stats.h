@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'stats.ui'
 **
-** Created: Tue 11. Oct 08:13:25 2011
-**      by: Qt User Interface Compiler version 4.7.4
+** Created: Tue 10. Jul 08:30:00 2012
+**      by: Qt User Interface Compiler version 4.8.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -17,6 +17,7 @@
 #include <QtGui/QGroupBox>
 #include <QtGui/QHeaderView>
 #include <QtGui/QLabel>
+#include <QtGui/QLayout>
 #include <QtGui/QLineEdit>
 #include <QtGui/QMainWindow>
 #include <QtGui/QMenu>
